@@ -1,0 +1,79 @@
+@use "picknmix";
+
+@include picknmix.border-box;
+
+:root {
+  --padding: clamp(
+    0rem,
+    calc((100vw - 16rem) / 4),
+    1rem
+  );
+
+  --tiny: calc(100vw - var(--padding) * 2);
+  --wide: 32rem;
+  --box: min(var(--tiny), var(--wide));
+}
+
+
+body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding-top: var(--padding);
+}
+
+main {
+  background: cyan;
+  width: picknmix.chunk();
+  height: picknmix.chunk();
+  width: var(--box);
+  height: var(--box);
+
+
+  font-size: calc(
+    1rem
+  );
+}
+
+main div {
+  font-family: Futura;
+}
+
+main div:nth-child(1) {
+  --size: clamp(
+    1rem,
+    calc(1rem + (100vw - var(--padding) * 2 - 8rem) / 8),
+    4rem
+  );
+  font-size: var(--size);
+}
+
+main div:nth-child(2) {
+  --size: clamp(
+    1rem,
+    calc(1rem + (100vw - var(--padding) * 2 - 8rem) / 12),
+    3rem
+  );
+  font-size: var(--size);
+}
+
+main div:nth-child(3) {
+  --size: clamp(
+    1rem,
+    calc(1rem + (100vw - var(--padding) * 2 - 8rem) / 24),
+    2rem
+  );
+  font-size: var(--size);
+
+  // width: calc(
+    // (32rem - (100vw - 2rem))
+  // );
+  // --v: calc(1rem + (14 - 12) * ((100vw - 8rem) / (32 - 8)));
+  // font-size: clamp(
+    // 1rem,
+    // calc(1rem + (14 - 12) * ((100vw - 8rem) / (32 - 8))),
+    // 2rem
+  // )
+}
+

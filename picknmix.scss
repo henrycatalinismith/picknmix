@@ -1,0 +1,23 @@
+
+@function chunk(
+  $min: 100vw,
+  $max: 32rem,
+  $pad: 1rem,
+) {
+  @return min(
+    calc(#{$min} - #{$pad} * 2),
+    #{$max}
+  );
+}
+
+@mixin border-box {
+  html {
+    box-sizing: border-box;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+}
