@@ -3,12 +3,42 @@
 @include picknmix.border-box;
 
 :root {
+  @include picknmix.responsive-column;
+}
+
+body {
+  margin: 0;
+}
+
+article {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: var(--picknmix-column);
+  justify-content: center;
+  margin-top: var(--picknmix-margin);
+  width: var(--picknmix-column);
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+}
+
+
+/*
+:root {
   --padding: clamp(
     0rem,
     calc((100vw - 16rem) / 4),
     1rem
   );
-
   --tiny: calc(100vw - var(--padding) * 2);
   --wide: 32rem;
   --box: min(var(--tiny), var(--wide));
@@ -75,5 +105,41 @@ main div:nth-child(3) {
     // calc(1rem + (14 - 12) * ((100vw - 8rem) / (32 - 8))),
     // 2rem
   // )
+}
+
+*/
+
+pre > code {
+  font-family: Menlo, monospace;
+  font-size: 0.8rem;
+}
+
+pre.example {
+  background: #223;
+  border-to: 0.2rem solid hotpink;
+  border-bottom: 0.2rem solid hotpink;
+  box-shadow:
+    0 -0.1rem 0 cyan,
+    0 0.1rem 0 cyan;
+  display: flex;
+  justify-content: center;
+  overflow-x: scroll;
+  padding: 2rem 0;
+  width: 100vw;
+}
+
+pre.example > code {
+  color: white;
+  font-family: Menlo, monospace;
+  font-size: 0.8rem;
+  min-width: var(--box);
+}
+
+.content {
+  color: darkslategray;
+  font-family: Rockwell;
+  font-size: 1.2rem;
+  line-height: 1.4em;
+  width: var(--picknmix-column);
 }
 

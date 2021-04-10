@@ -12,6 +12,8 @@ module.exports = function(eleventyConfig) {
     }
   )
 
+  eleventyConfig.addPassthroughCopy("responsive-column/margin.gif")
+
   eleventyConfig.addTransform(
     "htmlmin",
     function(content, outputPath) {

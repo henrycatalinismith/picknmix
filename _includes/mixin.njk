@@ -1,0 +1,45 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+
+    <link
+      rel="canonical"
+      href="https://hen.cat/picknmix"
+    />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+
+    <style>
+    	{{ css | safe }}
+    </style>
+
+    <title>
+      {{ title }}
+    </title>
+  </head>
+  <body>
+    <main>
+      <article class="mixin">
+        <header>
+          <h1>
+            {{ name }} mixin
+          </h1>
+          <p>
+            {{ description }}
+          </p>
+        </header>
+        <pre class="example"><code>{{ example }}</code></pre>
+        <div class="content">
+          {{ content | safe }}
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
+

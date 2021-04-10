@@ -1,3 +1,14 @@
+@mixin responsive-column {
+  --picknmix-margin: clamp(
+    0rem,
+    calc((100vw - 16rem) / 2),
+    1rem
+  );
+  --picknmix-column: min(
+    calc(100vw - var(--picknmix-margin) * 2),
+    32rem
+  );
+}
 
 @function chunk(
   $min: 100vw,
