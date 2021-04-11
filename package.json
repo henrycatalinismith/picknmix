@@ -15,6 +15,7 @@
     "sass": "^1.32.8"
   },
   "main": "picknmix.scss",
+  "files": ["picknmix.scss"],
   "scripts": {
     "build": "eleventy",
     "start": "eleventy --serve"
