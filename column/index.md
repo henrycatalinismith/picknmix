@@ -1,11 +1,11 @@
 ---
-name: responsive column
+name: column
 layout: mixin
 description: Accessible single-column responsive layout
 example: |
   @use "~@hendotcat/picknmix";
   :root {
-    @include picknmix.responsive-column;
+    @include picknmix.column;
   }
 ---
 
@@ -17,7 +17,7 @@ breathing room around content. At 512px, the width maxes out and stops growing.
 The following graph shows the growth of the column width (in purple) and the
 padding (in blue) for viewport widths from 128px to 1024px.
 
-{% include responsive-column-plot.svg %}
+{% include column-plot.svg %}
 
 The plateau in the growth of the column width coincides with the growth phase
 of the margin. This allows the margin to grow without the combined width of
@@ -25,7 +25,7 @@ both values exceeding the viewport width. The following animated GIF
 illustrates the effect of this growth pause.
 
 <img
-  src="/responsive-column/margin.gif"
+  src="/column/margin.gif"
   alt="Animation showing the smooth transition between the no-margin layout and the margin layout"
 />
 

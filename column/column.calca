@@ -1,0 +1,4 @@
+clamp(a, b, c) = min(max(b, a), c)
+margin(w) = clamp(0, (w-256)/2, 16)
+column(w) = min(w - (margin(w)*2), 512)
+plot(margin(w), column(w), 128..1024)
