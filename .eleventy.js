@@ -41,6 +41,7 @@ module.exports = function(eleventyConfig) {
         const dom = new JSDOM(content)
         const links = dom.window.document.querySelectorAll("a")
         const images = dom.window.document.querySelectorAll("img")
+        const videos = dom.window.document.querySelectorAll("video")
 
         for (const a of links) {
           if (a.href.startsWith("/")) {
@@ -51,6 +52,12 @@ module.exports = function(eleventyConfig) {
         for (const img of images) {
           if (img.src.startsWith("/")) {
             img.src = url + img.src
+          }
+        }
+
+        for (const video of videos) {
+          if (video.src.startsWith("/")) {
+            video.src = url + video.src
           }
         }
 
