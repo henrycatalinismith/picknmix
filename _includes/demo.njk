@@ -1,0 +1,19 @@
+---js
+{
+  css: function(scss) {
+    scss = [
+      '@use "picknmix";',
+      scss,
+    ].join("\n")
+    const sass = require("sass")
+    return sass.renderSync({ data: scss }).css
+  },
+}
+---
+
+<style>
+  {{ css(scss) }}
+</style>
+
+{{ content | safe }}
+

@@ -1,0 +1,25 @@
+---
+layout: demo
+scss: |
+  :root {
+    @include picknmix.column;
+  }
+
+  body {
+    justify-content: center;
+    display: flex;
+    margin: 0;
+  }
+
+  main {
+    background-color: cyan;
+    height: var(--picknmix-column);
+    margin-top: var(--picknmix-margin);
+    width: var(--picknmix-column);
+  }
+
+---
+
+<main>
+</main>
+

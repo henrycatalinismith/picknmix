@@ -1,0 +1,37 @@
+---
+layout: demo
+scss: |
+  :root {
+    @include picknmix.column;
+    @include picknmix.font-sizes;
+  }
+
+  body {
+    justify-content: center;
+    display: flex;
+    margin: 0;
+  }
+
+  main {
+    background-color: cyan;
+    height: var(--picknmix-column);
+    margin-top: var(--picknmix-margin);
+    width: var(--picknmix-column);
+  }
+
+  .font-size-12 { font-size: var(--picknmix-font-size-12); }
+  .font-size-14 { font-size: var(--picknmix-font-size-14); }
+  .font-size-20 { font-size: var(--picknmix-font-size-20); }
+  .font-size-30 { font-size: var(--picknmix-font-size-30); }
+  .font-size-40 { font-size: var(--picknmix-font-size-40); }
+
+---
+
+<main>
+  <div class="font-size-40">font-size-40</div>
+  <div class="font-size-30">font-size-30</div>
+  <div class="font-size-20">font-size-20</div>
+  <div class="font-size-14">font-size-14</div>
+  <div class="font-size-12">font-size-12</div>
+</main>
+
