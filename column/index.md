@@ -28,7 +28,7 @@ both values exceeding the viewport width. The following animated GIF
 illustrates the effect of this growth pause.
 
 <img
-  src="/column/margin.gif"
+  src="/column/margin-pause.gif"
   alt="Animation showing the smooth transition between the no-margin layout and the margin layout"
 />
 
@@ -49,6 +49,12 @@ to 200% without loss of content or functionality.
 
 This mixin handles zoom levels far beyond 200%. On larger desktop-size
 viewports, higher zoom levels revert the layout further and further towards the
-mobile layout with the text filling the full width of the viewport.
+mobile layout with the text filling the full width of the viewport. On smaller
+mobile viewports, maxing out the zoom engages the zero margin tiny viewport
+layout in order to maximize the space available for displaying zoomed-in content.
 
+<img
+  src="/column/mobile-zoom.gif"
+  alt="Animation showing the zero margin layout kicking in on iOS at 300% zoom"
+/>
 
