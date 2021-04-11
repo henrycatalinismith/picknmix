@@ -24,12 +24,15 @@ padding (in blue) for viewport widths from 128px to 1024px.
 
 The plateau in the growth of the column width coincides with the growth phase
 of the margin. This allows the margin to grow without the combined width of
-both values exceeding the viewport width. The following animated GIF
-illustrates the effect of this growth pause.
+both values exceeding the viewport width. The following video illustrates the
+effect of this growth pause.
 
-<img
-  src="/column/margin-pause.gif"
-  alt="Animation showing the smooth transition between the no-margin layout and the margin layout"
+<video
+  autoplay
+  controls
+  loop
+  src="/column/margin-pause.mp4"
+  aria-label="The Google Chrome dev tools with a page containing a cyan box. As the page is widened, the box grows with it. Around 256px of width, the box briefly stops growing with the page width as a margin appears around it."
 />
 
 The column width is implemented with relative units rather than an absolute
@@ -53,8 +56,11 @@ mobile layout with the text filling the full width of the viewport. On smaller
 mobile viewports, maxing out the zoom engages the zero margin tiny viewport
 layout in order to maximize the space available for displaying zoomed-in content.
 
-<img
-  src="/column/mobile-zoom.gif"
-  alt="Animation showing the zero margin layout kicking in on iOS at 300% zoom"
+<video
+  autoplay
+  controls
+  loop
+  src="/column/mobile-zoom.mp4"
+  aria-label="Mobile Safari with the text size controls enabled and a cyan box on the page. As the text size increases, the box grows. Eventually the margin around the box disappears and it occupies the full width of the page."
 />
 

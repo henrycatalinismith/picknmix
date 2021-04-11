@@ -13,10 +13,10 @@ module.exports = function(eleventyConfig) {
     }
   )
 
-  eleventyConfig.addPassthroughCopy("column/margin-pause.gif")
-  eleventyConfig.addPassthroughCopy("column/mobile-zoom.gif")
-  eleventyConfig.addPassthroughCopy("font-sizes/margin-pause.gif")
-  eleventyConfig.addPassthroughCopy("font-sizes/mobile-zoom.gif")
+  eleventyConfig.addPassthroughCopy("column/margin-pause.mp4")
+  eleventyConfig.addPassthroughCopy("column/mobile-zoom.mp4")
+  eleventyConfig.addPassthroughCopy("font-sizes/margin-pause.mp4")
+  eleventyConfig.addPassthroughCopy("font-sizes/mobile-zoom.mp4")
 
   eleventyConfig.addTransform(
     "htmlmin",

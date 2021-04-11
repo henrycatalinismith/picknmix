@@ -29,9 +29,12 @@ coincides with the growth phase of the `column` mixin's margin. This causes
 the font sizes to scale with the width of the column instead of the width of
 the viewport.
 
-<img
-  src="/font-sizes/margin-pause.gif"
-  alt="Animation showing the smooth transition between the no-margin layout and the margin layout"
+<video
+  autoplay
+  controls
+  loop
+  src="/font-sizes/margin-pause.mp4"
+  aria-label="The Google Chrome dev tools with a page containing a cyan box. As the page is widened, the text grows with it. Around 256px of width, the text briefly stops growing with the page width as the box containing the text stays the same size for a moment."
 />
 
 The font sizes are implemented with relative units rather than an absolute
@@ -55,8 +58,11 @@ viewport. The following animation shows the resizing behavior of the font sizes
 on iOS, where maxing out the zoom level at 300% takes all the font sizes to
 `1rem`.
 
-<img
-  src="/font-sizes/mobile-zoom.gif"
-  alt="Animation showing the smooth transition between the no-margin layout and the margin layout"
+<video
+  autoplay
+  controls
+  loop
+  src="/font-sizes/mobile-zoom.mp4"
+  aria-label="Mobile Safari with the text size controls enabled and 4 lines of text on the page. As the text size increases, the smaller text grows faster than the larger text. At 300% zoom, all lines are the same size."
 />
 
