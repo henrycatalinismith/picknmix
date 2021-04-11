@@ -51,12 +51,16 @@ Because the font sizes are relative and converge towards `1rem` on smaller
 viewports, browser-native text resizing has more impact on smaller font sizes
 than larger ones. This is helpful because the larger sizes are already very,
 very large, so if a user is still zooming in further then it's presumably
-because one of the smaller sizes is still too small for them. The most helpful
-thing is if the smaller text gets bigger without the larger text becoming
-unnecessarily large to the extent that single words no longer fit in the
-viewport. The following animation shows the resizing behavior of the font sizes
-on iOS, where maxing out the zoom level at 300% takes all the font sizes to
-`1rem`.
+because one of the smaller sizes is still too small for them.
+
+The largest font sizes are, in fact, already 200% larger than the base `1rem`
+font size. So it's not particularly helpful for those to scale up another 200%.
+The most helpful thing is if the smaller text gets bigger without the larger
+text becoming unnecessarily large to the extent that single words no longer fit
+in the viewport. The following video shows the resizing behavior of the font
+sizes on iOS. Maxing out the zoom level at 300% takes all the font sizes to
+`1rem` so that all of them become extremely easy to read but none of them
+become so big that a single word no longer fits on the screen.
 
 <video
   autoplay

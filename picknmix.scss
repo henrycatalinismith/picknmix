@@ -1,3 +1,5 @@
+@use "sass:map";
+
 @mixin column {
   --picknmix-margin: clamp(
     0rem,
@@ -8,6 +10,27 @@
     calc(100vw - var(--picknmix-margin) * 2),
     32rem
   );
+}
+
+@mixin font-families($platform: null) {
+  $mono: (
+    Apple: "Menlo",
+    Windows: "Consolas",
+  );
+  $serif: (
+    Apple: "Rockwell",
+    Windows: "Cambria",
+  );
+  --picknmix-mono: #{if(
+    $platform,
+    map.get($mono, $platform),
+    map.values($mono)
+  )}, monospace;
+  --picknmix-serif: #{if(
+    $platform,
+    map.get($serif, $platform),
+    map.values($serif)
+  )}, serif;
 }
 
 @mixin font-sizes {
