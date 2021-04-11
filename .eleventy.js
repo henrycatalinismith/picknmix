@@ -29,7 +29,7 @@ module.exports = function(eleventyConfig) {
     }
   )
 
-  const url = process.env.COMMIT_REF ? "https://hen.cat/picknmix" : ""
+  const url = process.env.CI ? "https://hen.cat/picknmix" : ""
 
   eleventyConfig.addTransform(
     "links",
