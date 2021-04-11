@@ -7,6 +7,9 @@ example: |
   :root {
     @include picknmix.column;
   }
+  p {
+    width: var(--picknmix-column);
+  }
 ---
 
 This single-column responsive layout mixin supports viewport widths as narrow
