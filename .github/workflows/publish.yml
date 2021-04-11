@@ -41,5 +41,5 @@ jobs:
         with:
           access: public
           registry: https://npm.pkg.github.com/
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
