@@ -76,6 +76,32 @@ pre.example > code {
   width: var(--picknmix-column);
 }
 
+p > code {
+  font-size: 1em;
+  line-height: 1em;
+}
+
+blockquote {
+  background: snow;
+  border-left: 0.5rem solid deeppink;
+  margin: 0;
+  padding: 1rem 0;
+}
+
+blockquote p {
+  padding-left: 1rem;
+}
+
+blockquote footer {
+  background: snow;
+  padding-left: 1rem;
+}
+
+blockquote footer a {
+  font-style: normal;
+  text-decoration: none;
+}
+
 video {
   width: var(--picknmix-column);
 }

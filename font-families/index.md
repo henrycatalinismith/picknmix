@@ -24,3 +24,39 @@ ass than it sounds. This mixin is where I keep my solutions to those problems
 so that I can reduce the CO2 emissions my stuff generates by reducing the
 bandwidth it consumes.
 
+## Problem #1: Which Fonts?
+
+Do you have a computer and a phone each from every major platform? Me neither.
+Figuring out which fonts look best on Apple devices is easy because I have
+plenty of those. Microsoft's stuff is easy enough too, because you can [install
+their fonts with Homebrew](https://github.com/colindean/homebrew-fonts-nonfree).
+
+What fonts does Android ship with though? Who knows! It felt ironic that it was
+impossible to Google a good answer to this question even though Google's in
+charge of Android. Maybe that's how Android developers feel every day. On the
+bright side, when I finally do nail down a good answer to this question, this
+mixin gives me a place to capture it in a useful way.
+
+If I can get all the font choices are nailed down for all the major platforms,
+this time next year Rodney my boy, we'll be millionaires.
+
+## Problem #2: Does This Look OK?
+
+Using system fonts in this way means at some level you do have to accept that
+things aren't going to look the same on different platforms. But sometimes I
+want to least *check*. And I want that to be something I can do without a bunch
+of manual steps in the browser dev tools.
+
+Assuming all the fonts have been installed locally, here's how this mixin
+allows for a bit of quick testing to see how something looks in e.g. Windows.
+
+```
+@include picknmix.font-families("Windows");
+```
+
+Passing a parameter like that to the mixin tells it to skip all the other
+platforms and only output the fonts for that one. It's a quick way to make sure
+a page doesn't have any major visual issues on an important platform.
+
+
+

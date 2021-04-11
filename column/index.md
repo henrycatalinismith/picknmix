@@ -44,11 +44,18 @@ would get shorter and shorter as the text size increased.
 WCAG 2.0 success criterion 1.4.4 requires authors to support a zoom level of up
 to 200% without loss of content or functionality.
 
-> **Resize text**: Except for captions and images of text, text can be resized
-> without assistive technology up to 200 percent without loss of content or
-> functionality. (Level AA)
->
-> <cite><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html">WCAG 2.0 SC 1.4.4</a></cite>
+<blockquote>
+  <strong>Resize text</strong>: Except for captions and images of text, text
+  can be resized without assistive technology up to 200 percent without loss of
+  content or functionality. (Level AA)
+  <footer>
+    <cite>
+      <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html">
+        WCAG 2.0 SC 1.4.4
+      </a>
+    </cite>
+  </footer>
+</blockquote>
 
 This mixin handles zoom levels far beyond 200%. On larger desktop-size
 viewports, higher zoom levels revert the layout further and further towards the

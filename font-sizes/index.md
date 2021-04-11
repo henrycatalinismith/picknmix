@@ -41,11 +41,20 @@ The font sizes are implemented with relative units rather than an absolute
 value such as pixels. This causes them to scale up for users who resize the
 text.
 
-> **Resize text**: Except for captions and images of text, text can be resized
-> without assistive technology up to 200 percent without loss of content or
-> functionality. (Level AA)
->
-> <cite><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html">WCAG 2.0 SC 1.4.4</a></cite>
+<blockquote>
+  <p>
+    <strong>Resize text</strong>: Except for captions and images of text, text
+    can be resized without assistive technology up to 200 percent without loss
+    of content or functionality. (Level AA)
+  </p>
+  <footer>
+    <cite>
+      <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html">
+        WCAG 2.0 SC 1.4.4
+      </a>
+    </cite>
+  </footer>
+</blockquote>
 
 Because the font sizes are relative and converge towards `1rem` on smaller
 viewports, browser-native text resizing has more impact on smaller font sizes
