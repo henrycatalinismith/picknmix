@@ -134,3 +134,23 @@
   }
 }
 
+@mixin palette {
+  @media (prefers-color-scheme: light) {
+    --bg0: ghostwhite;
+    --bg1: lavenderblush;
+    --fg: darkslategray;
+    --blue: blue;
+    --pink: mediumvioletred;
+    --red: firebrick;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    --bg0: black;
+    --bg1: midnightblue;
+    --fg: ghostwhite;
+    --blue: deepskyblue;
+    --pink: hotpink;
+    --red: tomato;
+  }
+}
+
