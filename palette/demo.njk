@@ -1,0 +1,32 @@
+---
+layout: demo
+scss: |
+  :root {
+    @include picknmix.font-families;
+    @include picknmix.font-sizes;
+    @include picknmix.palette;
+  }
+
+  body {
+    background: var(--bg0);
+    display: grid;
+    place-content: center;
+    margin: 0;
+    height: 100vh;
+  }
+
+  p {
+    font-family: var(--slab);
+    font-size: var(--font-size-40);
+  }
+
+  .fg { color: var(--fg); }
+  .blue { color: var(--blue); }
+  .pink { color: var(--pink); }
+
+---
+
+<p class="fg">fg</p>
+<p class="blue">blue</p>
+<p class="pink">pink</p>
+
