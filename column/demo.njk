@@ -6,16 +6,17 @@ scss: |
   }
 
   body {
-    justify-content: center;
-    display: flex;
+    display: grid;
+    place-content: center;
     margin: 0;
+    height: 100%;
   }
 
   main {
     background-color: cyan;
-    height: var(--picknmix-column);
-    margin-top: var(--picknmix-margin);
-    width: var(--picknmix-column);
+    height: var(--column);
+    margin-top: var(--margin);
+    width: var(--column);
   }
 
 ---

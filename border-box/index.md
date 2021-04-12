@@ -4,7 +4,7 @@ layout: mixin
 description: The same box-sizing reset everyone uses
 example: |
   @use "~@hendotcat/picknmix";
-  @include picknmix.box-sizing;
+  @include picknmix.border-box;
 ---
 
 This mixin applies the `box-sizing: border-box` reset that almost everyone

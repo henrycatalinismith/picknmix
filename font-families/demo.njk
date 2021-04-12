@@ -1,0 +1,31 @@
+---
+layout: demo
+scss: |
+  :root {
+    @include picknmix.column;
+    @include picknmix.font-families;
+    @include picknmix.font-sizes;
+  }
+
+  body {
+    display: grid;
+    place-content: center;
+    margin: 0;
+    height: 100vh;
+  }
+
+  p {
+    font-size: var(--font-size-20);
+  }
+
+  .mono { font-family: var(--mono); }
+  .sans { font-family: var(--sans); }
+  .serif { font-family: var(--serif); }
+
+
+---
+
+<p class="mono">mono</p>
+<p class="sans">sans</p>
+<p class="serif">serif</p>
+

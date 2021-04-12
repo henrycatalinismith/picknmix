@@ -104,11 +104,10 @@
 }
 
 @mixin header {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   justify-content: center;
   min-height: var(--column);
+  place-content: center;
   width: var(--column);
 
   h1 {

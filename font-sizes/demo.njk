@@ -7,9 +7,10 @@ scss: |
   }
 
   body {
-    justify-content: center;
-    display: flex;
+    display: grid;
+    place-content: center;
     margin: 0;
+    height: 100%;
   }
 
   main {
@@ -18,16 +19,16 @@ scss: |
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: var(--picknmix-column);
-    margin-top: var(--picknmix-margin);
-    width: var(--picknmix-column);
+    height: var(--column);
+    margin-top: var(--margin);
+    width: var(--column);
   }
 
-  .font-size-12 { font-size: var(--picknmix-font-size-12); }
-  .font-size-14 { font-size: var(--picknmix-font-size-14); }
-  .font-size-20 { font-size: var(--picknmix-font-size-20); }
-  .font-size-30 { font-size: var(--picknmix-font-size-30); }
-  .font-size-40 { font-size: var(--picknmix-font-size-40); }
+  .font-size-12 { font-size: var(--font-size-12); }
+  .font-size-14 { font-size: var(--font-size-14); }
+  .font-size-20 { font-size: var(--font-size-20); }
+  .font-size-30 { font-size: var(--font-size-30); }
+  .font-size-40 { font-size: var(--font-size-40); }
 
 ---
 
