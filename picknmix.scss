@@ -67,7 +67,7 @@
     $platform,
     map.get($sans, $platform),
     map.values($sans)
-  )}, serif;
+  )}, sans-serif;
   --serif: #{if(
     $platform,
     map.get($serif, $platform),
