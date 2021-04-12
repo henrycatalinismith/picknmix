@@ -6,6 +6,18 @@ const sass = require("sass")
 module.exports = function(eleventyConfig) {
   console.log("picknmix")
 
+  eleventyConfig.addCollection(
+    "features",
+    function(collectionApi) {
+      return collectionApi
+        .getFilteredByGlob("*/*.md")
+        .sort((a, b) =>
+          a.data.name > b.data.name ? 1
+            : a.data.name < b.data.name ? -1 : 0
+        )
+    }
+  )
+
   eleventyConfig.addGlobalData(
     "css",
     function() {

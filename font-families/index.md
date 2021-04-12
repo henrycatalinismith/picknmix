@@ -8,7 +8,7 @@ example: |
     @include picknmix.font-families;
   }
   p {
-    font-family: var(--picknmix-serif);
+    font-family: var(--serif);
   }
 ---
 

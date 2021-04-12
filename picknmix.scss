@@ -1,77 +1,5 @@
 @use "sass:map";
 
-@mixin column {
-  --picknmix-margin: clamp(
-    0rem,
-    calc((100vw - 16rem) / 2),
-    1rem
-  );
-  --picknmix-column: min(
-    calc(100vw - var(--picknmix-margin) * 2),
-    32rem
-  );
-}
-
-@mixin font-families($platform: null) {
-  $mono: (
-    Apple: "Menlo",
-    Windows: "Consolas",
-  );
-  $serif: (
-    Apple: "Rockwell",
-    Windows: "Cambria",
-  );
-  --picknmix-mono: #{if(
-    $platform,
-    map.get($mono, $platform),
-    map.values($mono)
-  )}, monospace;
-  --picknmix-serif: #{if(
-    $platform,
-    map.get($serif, $platform),
-    map.values($serif)
-  )}, serif;
-}
-
-@mixin font-sizes {
-  --picknmix-font-size-12: clamp(
-    1rem,
-    calc(1rem + (100vw - var(--picknmix-margin) * 2 - 8rem) / 120),
-    1.2rem
-  );
-  --picknmix-font-size-14: clamp(
-    1rem,
-    calc(1rem + (100vw - var(--picknmix-margin) * 2 - 8rem) / 48),
-    1.4rem
-  );
-  --picknmix-font-size-20: clamp(
-    1rem,
-    calc(1rem + (100vw - var(--picknmix-margin) * 2 - 8rem) / 24),
-    2rem
-  );
-  --picknmix-font-size-30: clamp(
-    1rem,
-    calc(1rem + (100vw - var(--picknmix-margin) * 2 - 8rem) / 12),
-    3rem
-  );
-  --picknmix-font-size-40: clamp(
-    1rem,
-    calc(1rem + (100vw - var(--picknmix-margin) * 2 - 8rem) / 8),
-    4rem
-  );
-}
-
-@function chunk(
-  $min: 100vw,
-  $max: 32rem,
-  $pad: 1rem,
-) {
-  @return min(
-    calc(#{$min} - #{$pad} * 2),
-    #{$max}
-  );
-}
-
 @mixin border-box {
   html {
     box-sizing: border-box;
@@ -83,3 +11,118 @@
     box-sizing: inherit;
   }
 }
+
+@mixin column {
+  --margin: clamp(
+    0rem,
+    calc((100vw - 16rem) / 2),
+    1rem
+  );
+  --column: min(
+    calc(100vw - var(--margin) * 2),
+    32rem
+  );
+}
+
+@mixin description-list {
+  display: flex;
+  flex-direction: column;
+  width: var(--column);
+
+  dt {
+    font-family: var(--serif);
+    font-size: var(--font-size-14);
+  }
+
+  dd {
+    font-family: var(--serif);
+    font-size: var(--font-size-12);
+    margin: 0;
+  }
+
+  dd:not(:last-child) {
+    margin-bottom: var(--margin);
+  }
+}
+
+@mixin font-families($platform: null) {
+  $mono: (
+    Apple: "Menlo",
+    Windows: "Consolas",
+  );
+  $sans: (
+    Apple: "Helvetica",
+    Windows: "Calibri",
+  );
+  $serif: (
+    Apple: "Rockwell",
+    Windows: "Cambria",
+  );
+  --mono: #{if(
+    $platform,
+    map.get($mono, $platform),
+    map.values($mono)
+  )}, monospace;
+  --sans: #{if(
+    $platform,
+    map.get($sans, $platform),
+    map.values($sans)
+  )}, serif;
+  --serif: #{if(
+    $platform,
+    map.get($serif, $platform),
+    map.values($serif)
+  )}, serif;
+}
+
+@mixin font-sizes {
+  --font-size-12: clamp(
+    1rem,
+    calc(1rem + (100vw - var(--margin) * 2 - 8rem) / 120),
+    1.2rem
+  );
+  --font-size-14: clamp(
+    1rem,
+    calc(1rem + (100vw - var(--margin) * 2 - 8rem) / 48),
+    1.4rem
+  );
+  --font-size-20: clamp(
+    1rem,
+    calc(1rem + (100vw - var(--margin) * 2 - 8rem) / 24),
+    2rem
+  );
+  --font-size-30: clamp(
+    1rem,
+    calc(1rem + (100vw - var(--margin) * 2 - 8rem) / 12),
+    3rem
+  );
+  --font-size-40: clamp(
+    1rem,
+    calc(1rem + (100vw - var(--margin) * 2 - 8rem) / 8),
+    4rem
+  );
+}
+
+@mixin header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: var(--column);
+  width: var(--column);
+
+  h1 {
+    font-family: var(--serif);
+    font-size: var(--font-size-30);
+    text-align: center;
+    margin: 0;
+  }
+
+  p {
+    font-family: var(--serif);
+    font-size: var(--font-size-14);
+    margin: 0;
+    text-align: center;
+  }
+}
+

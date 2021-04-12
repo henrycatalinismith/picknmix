@@ -1,0 +1,55 @@
+---
+layout: demo
+scss: |
+  @include picknmix.border-box;
+
+  body {
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    margin: 0;
+    height: 100vh;
+  }
+
+  div {
+    align-items: center;
+    display: flex;
+    height: 20vmin;
+    justify-content: center;
+    width: 20vmin;
+  }
+
+  .border-box {
+    background: tomato;
+    padding: 2vmin;
+  }
+
+  .content-box {
+    box-sizing: content-box;
+    position: relative;
+  }
+
+  .content-box::after {
+    align-items: center;
+    background: deepskyblue;
+    content: '.content-box::after';
+    display: flex;
+    justify-content: space-around;
+    height: 20vmin;
+    left: 0;
+    padding: 2vmin;
+    position: absolute;
+    top: 0;
+    width: 20vmin;
+  }
+
+---
+
+<div class="border-box">
+  .border-box
+</div>
+
+<div class="content-box">
+  .content-box
+</div>
+

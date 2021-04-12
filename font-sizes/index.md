@@ -8,7 +8,7 @@ example: |
     @include picknmix.font-sizes;
   }
   p {
-    width: var(--picknmix-font-size-12);
+    width: var(--font-size-12);
   }
 ---
 

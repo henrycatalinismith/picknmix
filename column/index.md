@@ -8,7 +8,7 @@ example: |
     @include picknmix.column;
   }
   p {
-    width: var(--picknmix-column);
+    width: var(--column);
   }
 ---
 

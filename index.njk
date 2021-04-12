@@ -1,5 +1,6 @@
 ---
 title: picknmix
+description: Some Sass mixins
 ---
 <!doctype html>
 <html
@@ -28,10 +29,28 @@ title: picknmix
   </head>
   <body>
     <main>
-      {{ title }}
-      <div>abcdefghijkl</div>
-      <div>mnopqrstuvwxyz</div>
-      <div>0123456789</div>
+      <header>
+        <h1>
+          {{ title }}
+        </h1>
+        <p>
+          {{ description }}
+        </p>
+      </header>
+
+      <dl>
+        {% for feature in collections.features %}
+          <dt>
+            <a href="{{ url }}/{{ feature.data.name | slug }}">
+              {{ feature.data.name }}
+            </a>
+          </dt>
+          <dd>
+            {{ feature.data.description }}
+          </dd>
+        {% endfor %}
+      </dl>
+
     </main>
   </body>
 </html>
