@@ -30,12 +30,12 @@
   width: var(--column);
 
   dt {
-    font-family: var(--serif);
+    font-family: var(--slab);
     font-size: var(--font-size-14);
   }
 
   dd {
-    font-family: var(--serif);
+    font-family: var(--slab);
     font-size: var(--font-size-12);
     margin: 0;
   }
@@ -55,6 +55,10 @@
     Windows: "Calibri",
   );
   $serif: (
+    Apple: "Times New Roman",
+    Windows: "Constantia",
+  );
+  $slab: (
     Apple: "Rockwell",
     Windows: "Cambria",
   );
@@ -72,6 +76,11 @@
     $platform,
     map.get($serif, $platform),
     map.values($serif)
+  )}, serif;
+  --slab: #{if(
+    $platform,
+    map.get($slab, $platform),
+    map.values($slab)
   )}, serif;
 }
 
@@ -111,14 +120,14 @@
   width: var(--column);
 
   h1 {
-    font-family: var(--serif);
+    font-family: var(--slab);
     font-size: var(--font-size-30);
     text-align: center;
     margin: 0;
   }
 
   p {
-    font-family: var(--serif);
+    font-family: var(--slab);
     font-size: var(--font-size-14);
     margin: 0;
     text-align: center;

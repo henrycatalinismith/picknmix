@@ -45,9 +45,11 @@ WCAG 2.0 success criterion 1.4.4 requires authors to support a zoom level of up
 to 200% without loss of content or functionality.
 
 <blockquote>
-  <strong>Resize text</strong>: Except for captions and images of text, text
-  can be resized without assistive technology up to 200 percent without loss of
-  content or functionality. (Level AA)
+  <p>
+    <strong>Resize text</strong>: Except for captions and images of text, text
+    can be resized without assistive technology up to 200 percent without loss
+    of content or functionality. (Level AA)
+  </p>
   <footer>
     <cite>
       <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html">
