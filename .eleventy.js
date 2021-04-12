@@ -52,6 +52,7 @@ module.exports = function(eleventyConfig) {
       if (outputPath && outputPath.endsWith(".html")) {
         const dom = new JSDOM(content)
         const links = dom.window.document.querySelectorAll("a")
+        const iframes = dom.window.document.querySelectorAll("iframe")
         const images = dom.window.document.querySelectorAll("img")
         const videos = dom.window.document.querySelectorAll("video")
 
@@ -64,6 +65,12 @@ module.exports = function(eleventyConfig) {
         for (const img of images) {
           if (img.src.startsWith("/")) {
             img.src = url + img.src
+          }
+        }
+
+        for (const iframe of iframes) {
+          if (iframe.src.startsWith("/")) {
+            iframe.src = url + iframe.src
           }
         }
 
