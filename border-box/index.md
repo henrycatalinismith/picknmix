@@ -2,9 +2,57 @@
 name: border-box
 layout: mixin
 description: The same box-sizing reset everyone uses
-example: |
-  @use "~@hendotcat/picknmix";
-  @include picknmix.border-box;
+examples:
+  - name: border-box vs content-box
+    description: Inheritance demo of the border-box mixin
+    html: |
+      <div class="border-box">
+        .border-box
+      </div>
+      <div class="content-box">
+        .content-box
+      </div>
+    scss: |
+      main {
+        align-items: center;
+        justify-content: space-around;
+        display: flex;
+      }
+
+      div {
+        align-items: center;
+        display: flex;
+        height: 20vmin;
+        justify-content: center;
+        width: 20vmin;
+      }
+
+      .border-box {
+        background: tomato;
+        padding: 2vmin;
+      }
+
+      .content-box {
+        box-sizing: content-box;
+        position: relative;
+      }
+
+      .content-box::after {
+        align-items: center;
+        background: deepskyblue;
+        content: '.content-box::after';
+        display: flex;
+        justify-content: space-around;
+        height: 20vmin;
+        left: 0;
+        padding: 2vmin;
+        position: absolute;
+        top: 0;
+        width: 20vmin;
+      }
+
+
+
 ---
 
 This mixin applies the `box-sizing: border-box` reset that almost everyone

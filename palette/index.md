@@ -4,47 +4,69 @@ layout: mixin
 description: Accessible palette using only named CSS colors
 
 examples:
+  - name: dark palette
+    description: The dark color variant of the palette mixin
+    html: |
+      <div></div> <div></div> <div></div> <div></div>
+      <div></div> <div></div> <div></div>
+      <div></div> <div></div>
+      <div></div>
+    scss: |
+      :root {
+        @include picknmix.palette(dark);
+      }
+
+      main {
+        align-content: space-around;
+        display: grid;
+        grid-template-columns: repeat(5, 20vw);
+        grid-template-rows: repeat(2, 50vh);
+        justify-content: space-around;
+        height: 100%;
+      }
+
+      div:nth-child(1)  { background: var(--bg0); }
+      div:nth-child(2)  { background: var(--bg1); }
+      div:nth-child(3)  { background: var(--fg); }
+      div:nth-child(4)  { background: var(--red); }
+      div:nth-child(5)  { background: var(--orange); }
+      div:nth-child(6)  { background: var(--yellow); }
+      div:nth-child(7)  { background: var(--green); }
+      div:nth-child(8)  { background: var(--blue); }
+      div:nth-child(9)  { background: var(--pink); }
+      div:nth-child(10) { background: var(--purple); }
+
   - name: light palette
     description: The light color variant of the palette mixin
     html: |
-      <table>
-        <tbody>
-          <tr>
-            <td></td><td></td><td></td>
-            <td></td><td></td><td>
-          </tr>
-          <tr>
-            <td></td><td></td><td></td>
-            <td></td><td></td><td>
-          </tr>
-        </tbody>
-      </table>
+      <div></div> <div></div> <div></div> <div></div>
+      <div></div> <div></div> <div></div>
+      <div></div> <div></div>
+      <div></div>
     scss: |
-
-      table {
-        border-collapse: collapse;
+      :root {
+        @include picknmix.palette(light);
       }
 
-      td {
-        height: 50vh;
-        width: 20vw;
+      main {
+        align-content: space-around;
+        display: grid;
+        grid-template-columns: repeat(5, 20vw);
+        grid-template-rows: repeat(2, 50vh);
+        justify-content: space-around;
+        height: 100%;
       }
 
-      tr:nth-child(1) {
-        td:nth-child(1) { background: var(--bg0); }
-        td:nth-child(2) { background: var(--bg1); }
-        td:nth-child(3) { background: var(--fg); }
-        td:nth-child(4) { background: var(--red); }
-        td:nth-child(5) { background: var(--orange); }
-      }
-
-      tr:nth-child(2) {
-        td:nth-child(1) { background: var(--yellow); }
-        td:nth-child(2) { background: var(--green); }
-        td:nth-child(3) { background: var(--blue); }
-        td:nth-child(4) { background: var(--pink); }
-        td:nth-child(5) { background: var(--purple); }
-      }
+      div:nth-child(1)  { background: var(--bg0); }
+      div:nth-child(2)  { background: var(--bg1); }
+      div:nth-child(3)  { background: var(--fg); }
+      div:nth-child(4)  { background: var(--red); }
+      div:nth-child(5)  { background: var(--orange); }
+      div:nth-child(6)  { background: var(--yellow); }
+      div:nth-child(7)  { background: var(--green); }
+      div:nth-child(8)  { background: var(--blue); }
+      div:nth-child(9)  { background: var(--pink); }
+      div:nth-child(10) { background: var(--purple); }
 
 ---
 

@@ -10,6 +10,9 @@
       body {
         background-color: var(--bg0);
       }
+      main {
+        height: 100%;
+      }
       ${scss}
     `
     const sass = require("sass")
@@ -33,7 +36,9 @@
     </style>
   </head>
   <body>
-    {{ example.html | safe }}
+    <main>
+      {{ example.html | safe }}
+    </main>
   </body>
 </html>
 

@@ -1,5 +1,17 @@
-@mixin palette {
-  @media (prefers-color-scheme: light) {
+@mixin color-scheme($name, $force) {
+  @if $force == null {
+    @media (prefers-color-scheme: #{$name}) {
+      @content;
+    }
+  } @else if $force == $name {
+    @media all {
+      @content;
+    }
+  }
+}
+
+@mixin palette($force: null) {
+  @include color-scheme(light, $force) {
     --bg0: ghostwhite;
     --bg1: lavenderblush;
     --fg: darkslategray;
@@ -12,7 +24,7 @@
     --purple: rebeccapurple;
   }
 
-  @media (prefers-color-scheme: dark) {
+  @include color-scheme(dark, $force) {
     --bg0: black;
     --bg1: midnightblue;
     --fg: ghostwhite;
