@@ -7,19 +7,12 @@
 @use "../header/header" as *;
 @use "../margin/margin" as *;
 @use "../palette/palette" as *;
+@use "../root/root" as *;
 @use "../width/width" as *;
 
 @mixin theme {
   @include border-box;
-
-  :root {
-    @include column;
-    @include font-families;
-    @include font-sizes;
-    @include margin;
-    @include palette;
-    @include width;
-  }
+  @include root;
 
   body {
     background-color: var(--bg0);

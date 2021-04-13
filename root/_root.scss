@@ -1,0 +1,18 @@
+@use "../column/column" as *;
+@use "../font-families/font-families" as *;
+@use "../font-sizes/font-sizes" as *;
+@use "../margin/margin" as *;
+@use "../palette/palette" as *;
+@use "../width/width" as *;
+
+@mixin root {
+  :root {
+    @include column;
+    @include font-families;
+    @include font-sizes;
+    @include margin;
+    @include palette;
+    @include width;
+  }
+}
+

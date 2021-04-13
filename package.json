@@ -28,6 +28,7 @@
     "header/_header.scss",
     "margin/_margin.scss",
     "palette/_palette.scss",
+    "root/_root.scss",
     "theme/_theme.scss",
     "width/_width.scss"
   ],

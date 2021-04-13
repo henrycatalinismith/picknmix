@@ -2,8 +2,7 @@
 {
   src: function(name) {
     const fs = require("fs-extra")
-    const slug = name.replace(/ /g, "-")
-    const path = `${slug}/_${slug}.scss`
+    const path = `${name}/_${name}.scss`
     const src = fs.readFileSync(path)
     return src
   }
@@ -18,7 +17,7 @@
 
     <link
       rel="canonical"
-      href="https://hen.cat/picknmix"
+      href="https://hen.cat/picknmix/{{ name }}"
     />
 
     <meta
@@ -31,7 +30,7 @@
     </style>
 
     <title>
-      {{ title }}
+      {{ name }} mixin
     </title>
   </head>
   <body>
@@ -52,7 +51,7 @@
           <h2>
             demo
           </h2>
-          <iframe src="/{{ name | slug }}/demo"></iframe>
+          <iframe src="/{{ name }}/demo"></iframe>
         </div>
       </article>
     </main>
