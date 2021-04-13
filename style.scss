@@ -7,7 +7,7 @@ pre > code {
   font-size: 1rem;
 }
 
-pre.example {
+pre[class^="language-"] {
   // background: #223;
   background: var(--bg1);
   border-top: 0.1rem solid var(--fg);
@@ -17,20 +17,23 @@ pre.example {
     0 0.1rem 0 var(--pink);
   display: flex;
   justify-content: center;
-  overflow-x: scroll;
-  padding: 2rem 0;
+  padding: 2rem 0rem;
   width: 100vw;
 }
 
-pre.example > code {
+pre[class^="language-"] > code {
   color: var(--fg);
   font-family: var(--mono);
-  font-size: 1rem;
-  min-width: var(--box);
+  font-size: var(--f12);
+  min-width: var(--width);
+  overflow-x: scroll;
+  padding: 0 var(--margin);
 }
 
 .content {
-  display: grid;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   font-family: var(--slab);
   font-size: var(--f12);
   line-height: 1.4em;
@@ -63,7 +66,9 @@ h2 {
   width: var(--column);
 }
 
+pre,
 svg {
+  overflow: hidden;
   width: var(--column);
 }
 
