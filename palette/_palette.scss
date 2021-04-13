@@ -1,0 +1,28 @@
+@mixin palette {
+  @media (prefers-color-scheme: light) {
+    --bg0: ghostwhite;
+    --bg1: lavenderblush;
+    --fg: darkslategray;
+    --red: firebrick;
+    --orange: orangered;
+    --yellow: gold;
+    --green: green;
+    --blue: blue;
+    --pink: mediumvioletred;
+    --purple: rebeccapurple;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    --bg0: black;
+    --bg1: midnightblue;
+    --fg: ghostwhite;
+    --red: tomato;
+    --orange: orange;
+    --yellow: khaki;
+    --green: limegreen;
+    --blue: deepskyblue;
+    --pink: hotpink;
+    --purple: fuchsia;
+  }
+}
+

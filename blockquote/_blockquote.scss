@@ -1,0 +1,27 @@
+@mixin blockquote {
+  align-self: center;
+  background: var(--bg1);
+  border-left: 0.5rem solid var(--pink);
+  margin: 0;
+  padding: 1rem 0;
+  width: var(--width);
+
+  p {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  ul {
+    padding-left: 3rem;
+    padding-right: 2rem;
+  }
+
+  footer {
+    padding-left: 1rem;
+  }
+
+  blockquote footer a {
+    font-style: normal;
+  }
+}
+

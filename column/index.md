@@ -22,6 +22,9 @@ The following graph shows the growth of the column width (in purple) and the
 
 {% include column-plot.svg %}
 
+The growth rate of the column briefly doubles as the viewport width approaches
+512px. This coincides with the shrink phase of the [margin], which disappears as the viewport width exceeds the maximum column width.
+
 The plateau in the growth of the column width coincides with the growth phase
 of the [margin]. This allows the [margin] to grow without the combined width of
 both values exceeding the viewport width. The following video illustrates the

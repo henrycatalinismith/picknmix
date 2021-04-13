@@ -1,0 +1,23 @@
+@mixin header {
+  display: grid;
+  justify-content: center;
+  min-height: var(--column);
+  place-content: center;
+  width: var(--column);
+
+  h1 {
+    font-family: var(--slab);
+    font-size: var(--f30);
+    text-align: center;
+    margin: 0;
+  }
+
+  p {
+    color: var(--pink);
+    font-family: var(--slab);
+    font-size: var(--f14);
+    margin: 0;
+    text-align: center;
+  }
+}
+

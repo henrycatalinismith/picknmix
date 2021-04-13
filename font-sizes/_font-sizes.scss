@@ -1,0 +1,28 @@
+@mixin font-sizes {
+  --f12: clamp(
+    1rem,
+    calc(1rem + (100vw - var(--margin) * 2 - 8rem) / 120),
+    1.2rem
+  );
+  --f14: clamp(
+    1rem,
+    calc(1rem + (100vw - var(--margin) * 2 - 8rem) / 48),
+    1.4rem
+  );
+  --f20: clamp(
+    1rem,
+    calc(1rem + (100vw - var(--margin) * 2 - 8rem) / 24),
+    2rem
+  );
+  --f30: clamp(
+    1rem,
+    calc(1rem + (100vw - var(--margin) * 2 - 8rem) / 12),
+    3rem
+  );
+  --f40: clamp(
+    1rem,
+    calc(1rem + (100vw - var(--margin) * 2 - 8rem) / 8),
+    4rem
+  );
+}
+
