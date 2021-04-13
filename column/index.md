@@ -18,12 +18,12 @@ space for content. A 16px margin is applied to wider viewports to create some
 breathing room around content. At 512px, the width maxes out and stops growing.
 
 The following graph shows the growth of the column width (in purple) and the
-padding (in blue) for viewport widths from 128px to 1024px.
+[margin] (in blue) for viewport widths from 128px to 1024px.
 
 {% include column-plot.svg %}
 
 The plateau in the growth of the column width coincides with the growth phase
-of the margin. This allows the margin to grow without the combined width of
+of the [margin]. This allows the [margin] to grow without the combined width of
 both values exceeding the viewport width. The following video illustrates the
 effect of this growth pause.
 
@@ -73,3 +73,4 @@ layout in order to maximize the space available for displaying zoomed-in content
   aria-label="Mobile Safari with the text size controls enabled and a cyan box on the page. As the text size increases, the box grows. Eventually the margin around the box disappears and it occupies the full width of the page."
 />
 
+[margin]: /margin

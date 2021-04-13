@@ -1,38 +1,6 @@
 @use "picknmix";
 
-@include picknmix.border-box;
-
-:root {
-  @include picknmix.column;
-  @include picknmix.font-families();
-  @include picknmix.font-sizes;
-  @include picknmix.palette;
-}
-
-body {
-  background-color: var(--bg0);
-  color: var(--fg);
-  margin: 0;
-}
-
-main,
-article {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
-
-header {
-  @include picknmix.header;
-
-  p {
-    color: var(--pink);
-  }
-}
-
-dl {
-  @include picknmix.description-list;
-}
+@include picknmix.theme;
 
 pre > code {
   font-family: var(--mono);

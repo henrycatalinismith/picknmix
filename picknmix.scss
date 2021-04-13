@@ -13,14 +13,8 @@
 }
 
 @mixin column {
-  --margin: clamp(
-    0rem,
-    calc((100vw - 16rem) / 2),
-    1rem
-  );
-  --column: min(
-    calc(100vw - var(--margin) * 2),
-    32rem
+  --column: calc(
+    var(--width) - var(--margin) * 2
   );
 }
 
@@ -127,11 +121,20 @@
   }
 
   p {
+    color: var(--pink);
     font-family: var(--slab);
     font-size: var(--font-size-14);
     margin: 0;
     text-align: center;
   }
+}
+
+@mixin margin {
+  --margin: clamp(
+    0rem,
+    calc((100vw - 16rem) / 2),
+    1rem
+  );
 }
 
 @mixin palette {
@@ -160,5 +163,47 @@
     --pink: hotpink;
     --purple: fuchsia;
   }
+}
+
+@mixin theme {
+  @include border-box;
+
+  :root {
+    @include column;
+    @include font-families;
+    @include font-sizes;
+    @include margin;
+    @include palette;
+    @include width;
+  }
+
+  body {
+    background-color: var(--bg0);
+    color: var(--fg);
+    margin: 0;
+  }
+
+  article,
+  main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main > header,
+  main > article > header {
+    @include header;
+  }
+
+  dl {
+    @include description-list;
+  }
+}
+
+@mixin width {
+  --width: min(
+    100vw,
+    32rem
+  );
 }
 

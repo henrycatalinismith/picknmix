@@ -86,6 +86,7 @@ module.exports = function(eleventyConfig) {
     }
   )
 
+  eleventyConfig.addWatchTarget("picknmix.scss")
   eleventyConfig.addWatchTarget("style.scss")
 }
 
