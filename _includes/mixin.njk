@@ -1,3 +1,14 @@
+---js
+{
+  src: function(name) {
+    const fs = require("fs-extra")
+    const slug = name.replace(/ /g, "-")
+    const path = `${slug}/_${slug}.scss`
+    const src = fs.readFileSync(path)
+    return src
+  }
+}
+---
 <!doctype html>
 <html
   lang="en"
@@ -34,7 +45,7 @@
             {{ description }}
           </p>
         </header>
-        <pre class="example"><code>{{ example }}</code></pre>
+        <pre class="example"><code>{{ src(name) }}</code></pre>
         <div class="content">
           {{ content | safe }}
 
