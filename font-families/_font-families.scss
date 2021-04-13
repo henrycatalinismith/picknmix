@@ -1,26 +1,6 @@
 @use "sass:map";
 
-$mono: (
-  Apple: "Menlo",
-  Windows: "Consolas",
-);
-
-$sans: (
-  Apple: "Helvetica",
-  Windows: "Calibri",
-);
-
-$serif: (
-  Apple: "Times New Roman",
-  Windows: "Constantia",
-);
-
-$slab: (
-  Apple: "Rockwell",
-  Windows: "Cambria",
-);
-
-@function family($fallback, $platforms, $platform) {
+@function family($fallback, $platform, $platforms) {
   @return if(
     $platform,
     map.get($platforms, $platform),
@@ -29,9 +9,21 @@ $slab: (
 }
 
 @mixin font-families($platform: null) {
-  --mono: #{family(monospace, $mono, $platform)};
-  --sans: #{family(sans-serif, $sans, $platform)};
-  --serif: #{family(serif, $serif, $platform)};
-  --slab: #{family(serif, $slab, $platform)};
+  --mono: #{family(monospace, $platform, (
+    Apple: "Menlo",
+    Windows: "Consolas",
+  ))};
+  --sans: #{family(sans-serif, $platform, (
+    Apple: "Helvetica",
+    Windows: "Calibri",
+  ))};
+  --serif: #{family(serif, $platform, (
+    Apple: "Times New Roman",
+    Windows: "Constantia",
+  ))};
+  --slab: #{family(serif, $platform, (
+    Apple: "Rockwell",
+    Windows: "Cambria",
+  ))};
 }
 
