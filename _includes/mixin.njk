@@ -45,7 +45,7 @@
             {{ description }}
           </p>
         </header>
-        <pre class="example"><code>{% highlight "scss" %}{{ src(name) }}{% endhighlight %}</code></pre>
+        <pre class="example"><code>{% highlight "scss" %}{{ src(name) | safe }}{% endhighlight %}</code></pre>
         <div class="content">
           {{ content | safe }}
 

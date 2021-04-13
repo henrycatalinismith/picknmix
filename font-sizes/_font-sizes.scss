@@ -1,28 +1,16 @@
+@function size($max, $damp) {
+  @return clamp(
+    1rem,
+    calc(1rem + (100vw - var(--margin) * 2 - 8rem) / #{$damp}),
+    #{$max}
+  );
+}
+
 @mixin font-sizes {
-  --f12: clamp(
-    1rem,
-    calc(1rem + (100vw - var(--margin) * 2 - 8rem) / 120),
-    1.2rem
-  );
-  --f14: clamp(
-    1rem,
-    calc(1rem + (100vw - var(--margin) * 2 - 8rem) / 48),
-    1.4rem
-  );
-  --f20: clamp(
-    1rem,
-    calc(1rem + (100vw - var(--margin) * 2 - 8rem) / 24),
-    2rem
-  );
-  --f30: clamp(
-    1rem,
-    calc(1rem + (100vw - var(--margin) * 2 - 8rem) / 12),
-    3rem
-  );
-  --f40: clamp(
-    1rem,
-    calc(1rem + (100vw - var(--margin) * 2 - 8rem) / 8),
-    4rem
-  );
+  --f12: #{size(1.2rem, 120)};
+  --f14: #{size(1.4rem, 48)};
+  --f20: #{size(2.0rem, 24)};
+  --f30: #{size(3.0rem, 12)};
+  --f40: #{size(3.0rem, 8)};
 }
 

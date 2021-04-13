@@ -1,41 +1,37 @@
 @use "sass:map";
 
+$mono: (
+  Apple: "Menlo",
+  Windows: "Consolas",
+);
+
+$sans: (
+  Apple: "Helvetica",
+  Windows: "Calibri",
+);
+
+$serif: (
+  Apple: "Times New Roman",
+  Windows: "Constantia",
+);
+
+$slab: (
+  Apple: "Rockwell",
+  Windows: "Cambria",
+);
+
+@function family($fallback, $platforms, $platform) {
+  @return if(
+    $platform,
+    map.get($platforms, $platform),
+    map.values($platforms)
+  ), $fallback;
+}
+
 @mixin font-families($platform: null) {
-  $mono: (
-    Apple: "Menlo",
-    Windows: "Consolas",
-  );
-  $sans: (
-    Apple: "Helvetica",
-    Windows: "Calibri",
-  );
-  $serif: (
-    Apple: "Times New Roman",
-    Windows: "Constantia",
-  );
-  $slab: (
-    Apple: "Rockwell",
-    Windows: "Cambria",
-  );
-  --mono: #{if(
-    $platform,
-    map.get($mono, $platform),
-    map.values($mono)
-  )}, monospace;
-  --sans: #{if(
-    $platform,
-    map.get($sans, $platform),
-    map.values($sans)
-  )}, sans-serif;
-  --serif: #{if(
-    $platform,
-    map.get($serif, $platform),
-    map.values($serif)
-  )}, serif;
-  --slab: #{if(
-    $platform,
-    map.get($slab, $platform),
-    map.values($slab)
-  )}, serif;
+  --mono: #{family(monospace, $mono, $platform)};
+  --sans: #{family(sans-serif, $sans, $platform)};
+  --serif: #{family(serif, $serif, $platform)};
+  --slab: #{family(serif, $slab, $platform)};
 }
 
