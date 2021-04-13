@@ -1,5 +1,5 @@
 ---
-name: font sizes
+name: font-sizes
 layout: mixin
 description: Accessible responsive font sizes
 example: |

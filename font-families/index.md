@@ -1,5 +1,5 @@
 ---
-name: font families
+name: font-families
 layout: mixin
 description: Minimalistic high-performance typography
 example: |

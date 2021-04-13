@@ -8,13 +8,9 @@ pre > code {
 }
 
 pre[class^="language-"] {
-  // background: #223;
   background: var(--bg1);
-  border-top: 0.1rem solid var(--fg);
-  border-bottom: 0.1rem solid var(--fg);
-  box-shadow:
-    0 -0.1rem 0 var(--pink),
-    0 0.1rem 0 var(--pink);
+  border-top: 0.1rem solid var(--pink);
+  border-bottom: 0.1rem solid var(--pink);
   display: flex;
   justify-content: center;
   padding: 2rem 0rem;
@@ -31,9 +27,7 @@ pre[class^="language-"] > code {
 }
 
 .content {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   font-family: var(--slab);
   font-size: var(--f12);
   line-height: 1.4em;
@@ -42,7 +36,7 @@ pre[class^="language-"] > code {
 
 .content p {
   align-self: center;
-  margin: 0;
+  margin: 0 auto;
   width: var(--column);
 }
 
@@ -89,19 +83,25 @@ a:visited {
 
   .keyword,
   .rule {
+    color: var(--blue);
+  }
+
+  .function {
     color: var(--red);
   }
 
-  .selector {
+  .selector,
+  .string {
     color: var(--green);
   }
 
-  .property {
+  .property,
+  .variable {
     color: var(--purple);
   }
 
   .operator,
   .punctuation {
-    color: var(--blue);
+    color: var(--fg);
   }
 }

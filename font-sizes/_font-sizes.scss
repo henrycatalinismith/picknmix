@@ -1,7 +1,14 @@
 @function size($max, $damp) {
   @return clamp(
     1rem,
-    calc(1rem + (100vw - var(--margin) * 2 - 8rem) / #{$damp}),
+    calc(
+      1rem + (
+        100vw
+        - var(--margin)
+        * 2
+        - 8rem
+      ) / #{$damp}
+    ),
     #{$max}
   );
 }

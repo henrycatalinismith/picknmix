@@ -1,5 +1,5 @@
 ---
-name: border box
+name: border-box
 layout: mixin
 description: The same box-sizing reset everyone uses
 example: |
