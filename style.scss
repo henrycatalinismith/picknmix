@@ -79,3 +79,24 @@ a:visited {
   color: var(--blue);
 }
 
+.language-scss {
+  color: var(--orange);
+
+  .keyword,
+  .rule {
+    color: var(--red);
+  }
+
+  .selector {
+    color: var(--green);
+  }
+
+  .property {
+    color: var(--purple);
+  }
+
+  .operator,
+  .punctuation {
+    color: var(--blue);
+  }
+}

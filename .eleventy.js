@@ -1,3 +1,4 @@
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const fs = require("fs-extra")
 const htmlmin = require("html-minifier")
 const { JSDOM } = require("jsdom")
@@ -29,6 +30,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("column/mobile-zoom.mp4")
   eleventyConfig.addPassthroughCopy("font-sizes/margin-pause.mp4")
   eleventyConfig.addPassthroughCopy("font-sizes/mobile-zoom.mp4")
+
+  eleventyConfig.addPlugin(syntaxHighlight)
 
   eleventyConfig.addTransform(
     "htmlmin",
