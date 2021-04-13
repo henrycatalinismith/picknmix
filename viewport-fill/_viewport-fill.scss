@@ -1,0 +1,13 @@
+@mixin viewport-fill {
+  html {
+    overflow: hidden;
+  }
+
+  body {
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    width: 100vw;
+  }
+}
+

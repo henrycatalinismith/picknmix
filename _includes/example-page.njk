@@ -1,0 +1,47 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+
+    <link
+      rel="canonical"
+      href="https://hen.cat/picknmix/{{ name }}"
+    />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+
+    <style>
+    	{{ css | safe }}
+    </style>
+
+  </head>
+  <body>
+    <main>
+      <article class="mixin">
+        <header>
+          <h1>
+            {{ example.name }}
+          </h1>
+          <p>
+            {{ example.description }}
+          </p>
+        </header>
+
+        <iframe src="/{{ example.mixin }}/examples/{{ example.name | slug }}/iframe.html"></iframe>
+
+        <h2>scss</h2>
+        {% highlight "scss" %}{{ example.scss | safe }}{% endhighlight %}
+
+        <h2>html</h2>
+        {% highlight "html" %}{{ example.html | safe }}{% endhighlight %}
+
+      </article>
+    </main>
+  </body>
+</html>
+

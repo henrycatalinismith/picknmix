@@ -48,10 +48,24 @@
         <div class="content">
           {{ content | safe }}
 
-          <h2>
-            demo
-          </h2>
-          <iframe src="/{{ name }}/demo"></iframe>
+          {% if examples | length > 0 %}
+            <h2>
+              Examples
+            </h2>
+            <dl>
+              {% for example in examples %}
+                <dt>
+                  <a href="/{{ name }}/examples/{{ example.name | slug }}">
+                    {{ example.name }}
+                  </a>
+                </dt>
+                <dd>
+                  {{ example.description }}
+                </dd>
+              {% endfor %}
+            </dl>
+          {% endif %}
+
         </div>
       </article>
     </main>

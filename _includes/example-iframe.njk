@@ -1,0 +1,39 @@
+---js
+{
+  css: function(scss) {
+    scss = `
+      @use "./picknmix";
+      @include picknmix.border-box;
+      @include picknmix.root;
+      @include picknmix.viewport-fill;
+      @include picknmix.viewport-fill;
+      body {
+        background-color: var(--bg0);
+      }
+      ${scss}
+    `
+    const sass = require("sass")
+    return sass.renderSync({ data: scss }).css
+  },
+}
+---
+
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <style>
+      {{ css(example.scss) | safe }}
+    </style>
+  </head>
+  <body>
+    {{ example.html | safe }}
+  </body>
+</html>
+

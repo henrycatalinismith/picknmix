@@ -19,6 +19,25 @@ module.exports = function(eleventyConfig) {
     }
   )
 
+  eleventyConfig.addCollection(
+    "examples",
+    function(collectionApi) {
+      const mixins = collectionApi.getFilteredByGlob("*/*.md")
+      const examples = []
+
+      mixins.forEach(mixin => {
+        (mixin.data.examples || []).forEach(example => {
+          examples.push({
+            ...example,
+            mixin: mixin.data.name,
+          })
+        })
+      })
+
+      return examples
+    }
+  )
+
   eleventyConfig.addGlobalData(
     "css",
     function() {
