@@ -30,9 +30,16 @@ pre.example > code {
 }
 
 .content {
+  display: grid;
   font-family: var(--slab);
-  font-size: var(--font-size-12);
+  font-size: var(--f12);
   line-height: 1.4em;
+  row-gap: 1rem;
+}
+
+.content p {
+  align-self: center;
+  margin: 0;
   width: var(--column);
 }
 
@@ -42,42 +49,21 @@ p code {
   line-height: 1em;
 }
 
-blockquote {
-  background: var(--bg1);
-  border-left: 0.5rem solid var(--pink);
-  margin: 0;
-  padding: 1rem 0;
-}
-
-blockquote p {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-blockquote ul {
-  padding-left: 3rem;
-  padding-right: 2rem;
-}
-
-blockquote footer {
-  padding-left: 1rem;
-}
-
-blockquote footer a {
-  font-style: normal;
-  text-decoration: none;
-}
-
 video {
   width: var(--column);
 }
 
 h2 {
   font-family: var(--slab);
-  font-size: var(--font-size-20);
+  font-size: var(--f20);
+  line-height: 1.5em;
   margin-top: calc(var(--margin) * 2);
   margin-bottom: var(--margin);
   text-align: left;
+  width: var(--column);
+}
+
+svg {
   width: var(--column);
 }
 

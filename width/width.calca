@@ -1,0 +1,3 @@
+clamp(a, b, c) = min(max(b, a), c)
+width(w) = min(w, 512)
+plot(width(w), 128..1024)

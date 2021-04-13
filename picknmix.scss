@@ -1,5 +1,32 @@
 @use "sass:map";
 
+@mixin blockquote {
+  align-self: center;
+  background: var(--bg1);
+  border-left: 0.5rem solid var(--pink);
+  margin: 0;
+  padding: 1rem 0;
+  width: var(--width);
+
+  p {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  ul {
+    padding-left: 3rem;
+    padding-right: 2rem;
+  }
+
+  footer {
+    padding-left: 1rem;
+  }
+
+  blockquote footer a {
+    font-style: normal;
+  }
+}
+
 @mixin border-box {
   html {
     box-sizing: border-box;
@@ -13,8 +40,9 @@
 }
 
 @mixin column {
-  --column: calc(
-    var(--width) - var(--margin) * 2
+  --column: min(
+    calc(var(--width) - var(--margin) * 2),
+    min(32rem, 100vw)
   );
 }
 
@@ -25,17 +53,17 @@
 
   dt {
     font-family: var(--slab);
-    font-size: var(--font-size-14);
+    font-size: var(--f14);
   }
 
   dd {
     font-family: var(--slab);
-    font-size: var(--font-size-12);
+    font-size: var(--f12);
     margin: 0;
   }
 
   dd:not(:last-child) {
-    margin-bottom: var(--margin);
+    margin-bottom: 1rem;
   }
 }
 
@@ -79,27 +107,27 @@
 }
 
 @mixin font-sizes {
-  --font-size-12: clamp(
+  --f12: clamp(
     1rem,
     calc(1rem + (100vw - var(--margin) * 2 - 8rem) / 120),
     1.2rem
   );
-  --font-size-14: clamp(
+  --f14: clamp(
     1rem,
     calc(1rem + (100vw - var(--margin) * 2 - 8rem) / 48),
     1.4rem
   );
-  --font-size-20: clamp(
+  --f20: clamp(
     1rem,
     calc(1rem + (100vw - var(--margin) * 2 - 8rem) / 24),
     2rem
   );
-  --font-size-30: clamp(
+  --f30: clamp(
     1rem,
     calc(1rem + (100vw - var(--margin) * 2 - 8rem) / 12),
     3rem
   );
-  --font-size-40: clamp(
+  --f40: clamp(
     1rem,
     calc(1rem + (100vw - var(--margin) * 2 - 8rem) / 8),
     4rem
@@ -115,7 +143,7 @@
 
   h1 {
     font-family: var(--slab);
-    font-size: var(--font-size-30);
+    font-size: var(--f30);
     text-align: center;
     margin: 0;
   }
@@ -123,17 +151,23 @@
   p {
     color: var(--pink);
     font-family: var(--slab);
-    font-size: var(--font-size-14);
+    font-size: var(--f14);
     margin: 0;
     text-align: center;
   }
 }
 
 @mixin margin {
-  --margin: clamp(
-    0rem,
-    calc((100vw - 16rem) / 2),
-    1rem
+  --margin: calc(
+    clamp(
+      0rem,
+      calc((100vw - 16rem) / 2),
+      1rem
+    ) - clamp(
+      0rem,
+      calc((100vw - 32rem) / 2),
+      1rem
+    )
   );
 }
 
@@ -193,6 +227,10 @@
   main > header,
   main > article > header {
     @include header;
+  }
+
+  blockquote {
+    @include blockquote;
   }
 
   dl {

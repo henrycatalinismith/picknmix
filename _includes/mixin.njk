@@ -37,11 +37,12 @@
         <pre class="example"><code>{{ example }}</code></pre>
         <div class="content">
           {{ content | safe }}
+
+          <h2>
+            demo
+          </h2>
+          <iframe src="/{{ name | slug }}/demo"></iframe>
         </div>
-        <h2>
-          demo
-        </h2>
-        <iframe src="/{{ name | slug }}/demo"></iframe>
       </article>
     </main>
   </body>

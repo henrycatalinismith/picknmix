@@ -2,8 +2,6 @@
 layout: demo
 scss: |
   :root {
-    @include picknmix.column;
-    @include picknmix.margin;
     @include picknmix.width;
   }
 
@@ -16,13 +14,12 @@ scss: |
 
   main {
     background-color: cyan;
-    height: var(--column);
-    margin-top: var(--margin);
-    width: var(--column);
+    width: var(--width);
   }
 
 ---
 
 <main>
+  this box's width is set by <code>--width</code>
 </main>
 
