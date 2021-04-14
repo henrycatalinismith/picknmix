@@ -2,6 +2,10 @@
 name: description-list
 layout: mixin
 description: Lovely neat & versatile description lists
+dependencies:
+  - column
+  - font-families
+  - font-sizes
 examples:
   - name: description list style demo
     description: How it looks with some example text

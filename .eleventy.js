@@ -15,7 +15,21 @@ module.exports = function(eleventyConfig) {
         .sort((a, b) =>
           a.data.name > b.data.name ? 1
             : a.data.name < b.data.name ? -1 : 0
-        )
+        ).map(f => {
+          f.data.dependencies = (f.data.dependencies || []).map(name => {
+            return collectionApi
+              .getFilteredByGlob(`${name}/index.md`)[0]
+          })
+          return f
+        }).map(f => {
+          f.data.dependents = collectionApi
+            .getFilteredByGlob("*/*.md")
+            .filter(g => {
+              const names = g.data.dependencies.map(d => d.data.name)
+              return names.includes(f.data.name)
+            })
+          return f
+        })
     }
   )
 

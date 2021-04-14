@@ -2,6 +2,11 @@
 name: header
 layout: mixin
 description: Eye-catching & accessible page headers
+dependencies:
+  - column
+  - font-families
+  - font-sizes
+  - palette
 examples:
   - name: header demo
     description: How it looks with some example text

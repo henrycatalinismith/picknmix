@@ -2,6 +2,8 @@
 name: font-sizes
 layout: mixin
 description: Accessible responsive font sizes
+dependencies:
+  - margin
 examples:
   - name: font sizes demo
     description: All the font sizes

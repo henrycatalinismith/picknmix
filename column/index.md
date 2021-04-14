@@ -2,6 +2,9 @@
 name: column
 layout: mixin
 description: Accessible single-column responsive layout
+dependencies:
+  - margin
+  - width
 examples:
   - name: responsive square
     description: Using --column as the width and height

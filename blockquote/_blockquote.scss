@@ -1,26 +1,25 @@
 @mixin blockquote {
   align-self: center;
   background: var(--bg1);
-  border-left: 0.5rem solid var(--pink);
+  box-shadow: 0 0 0.25rem var(--orange);
+  display: grid;
+  grid-template-columns: var(--column);
+  justify-content: center;
   margin: 0;
-  padding: 1rem 0;
-  width: var(--width);
+  padding: 2rem 0;
+  row-gap: 2rem;
+  width: var(--burst);
 
-  p {
-    padding-left: 1rem;
-    padding-right: 1rem;
+  & > * {
+    margin: 0;
+    padding: 0;
   }
 
   ul {
-    padding-left: 3rem;
-    padding-right: 2rem;
-  }
-
-  footer {
     padding-left: 1rem;
   }
 
-  blockquote footer a {
+  footer a {
     font-style: normal;
   }
 }

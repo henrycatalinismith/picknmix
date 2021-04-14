@@ -7,10 +7,11 @@ examples:
   - name: dark palette
     description: The dark color variant of the palette mixin
     html: |
-      <div></div> <div></div> <div></div> <div></div>
-      <div></div> <div></div> <div></div>
       <div></div> <div></div>
-      <div></div>
+      <div></div> <div></div>
+      <div></div> <div></div>
+      <div></div> <div></div>
+      <div></div> <div></div>
     scss: |
       :root {
         @include picknmix.palette(dark);
@@ -39,10 +40,11 @@ examples:
   - name: light palette
     description: The light color variant of the palette mixin
     html: |
-      <div></div> <div></div> <div></div> <div></div>
-      <div></div> <div></div> <div></div>
       <div></div> <div></div>
-      <div></div>
+      <div></div> <div></div>
+      <div></div> <div></div>
+      <div></div> <div></div>
+      <div></div> <div></div>
     scss: |
       :root {
         @include picknmix.palette(light);

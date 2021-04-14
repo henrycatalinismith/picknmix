@@ -1,3 +1,4 @@
+@use "../burst/burst" as *;
 @use "../column/column" as *;
 @use "../font-families/font-families" as *;
 @use "../font-sizes/font-sizes" as *;
@@ -7,6 +8,7 @@
 
 @mixin root {
   :root {
+    @include burst;
     @include column;
     @include font-families;
     @include font-sizes;
