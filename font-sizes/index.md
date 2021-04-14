@@ -2,14 +2,23 @@
 name: font-sizes
 layout: mixin
 description: Accessible responsive font sizes
-example: |
-  @use "~@hendotcat/picknmix";
-  :root {
-    @include picknmix.font-sizes;
-  }
-  p {
-    font-size: var(--f12);
-  }
+examples:
+  - name: font sizes demo
+    description: All the font sizes
+    html: |
+      <div class="font-size-40">font-size-40</div>
+      <div class="font-size-30">font-size-30</div>
+      <div class="font-size-20">font-size-20</div>
+      <div class="font-size-14">font-size-14</div>
+      <div class="font-size-12">font-size-12</div>
+
+    scss: |
+      .font-size-12 { font-size: var(--f12); }
+      .font-size-14 { font-size: var(--f14); }
+      .font-size-20 { font-size: var(--f20); }
+      .font-size-30 { font-size: var(--f30); }
+      .font-size-40 { font-size: var(--f40); }
+
 ---
 
 This responsive font size mixin supports viewport widths as narrow as 128px.

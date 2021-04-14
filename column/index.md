@@ -2,6 +2,29 @@
 name: column
 layout: mixin
 description: Accessible single-column responsive layout
+examples:
+  - name: responsive square
+    description: Using --column as the width and height
+    html: |
+      <div></div>
+    scss: |
+      :root {
+        @include picknmix.column;
+        @include picknmix.margin;
+        @include picknmix.width;
+      }
+
+      main {
+        display: grid;
+        place-content: center;
+      }
+
+      div {
+        background-color: var(--orange);
+        height: var(--column);
+        width: var(--column);
+      }
+
 example: |
   @use "~@hendotcat/picknmix";
   :root {

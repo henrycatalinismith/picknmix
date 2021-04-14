@@ -2,14 +2,37 @@
 name: font-families
 layout: mixin
 description: Minimalistic high-performance typography
-example: |
-  @use "~@hendotcat/picknmix";
-  :root {
-    @include picknmix.font-families;
-  }
-  p {
-    font-family: var(--serif);
-  }
+examples:
+  - name: font families demo
+    description: Preview text showing all four font families
+    html: |
+      <p class="mono">
+        The quick brown fox jumps
+        over the lazy dog.
+      </p>
+      <p class="sans">
+        The five boxing wizards
+        jump quickly.
+      </p>
+      <p class="serif">
+        How vexingly quick daft
+        zebras jump!
+      </p>
+      <p class="slab">
+        Sphinx of black quartz,
+        judge my vow.
+      </p>
+    scss: |
+      p { font-size: var(--f20); }
+      .mono { font-family: var(--mono); }
+      .sans { font-family: var(--sans); }
+      .serif { font-family: var(--serif); }
+      .slab { font-family: var(--slab); }
+
+      main {
+        display: grid;
+        place-content: center;
+      }
 ---
 
 Web fonts are great. They're usually gorgeous, for one thing, and in complex

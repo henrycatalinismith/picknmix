@@ -2,14 +2,21 @@
 name: margin
 layout: mixin
 description: Responsive content margin
-example: |
-  @use "~@hendotcat/picknmix";
-  :root {
-    @include picknmix.margin;
-  }
-  main {
-    margin: var(--margin);
-  }
+examples:
+  - name: margin demo
+    description: A box with a margin applied
+    html: |
+      <div></div>
+    scss: |
+      div {
+        background: var(--orange);
+        flex: 1;
+        margin: var(--margin);
+      }
+
+      main {
+        display: flex;
+      }
 ---
 
 This mixin provides a CSS variable called `--margin` which can be used as a
