@@ -50,9 +50,6 @@ examples:
         top: 0;
         width: 20vmin;
       }
-
-
-
 ---
 
 This mixin applies the `box-sizing: border-box` reset that almost everyone
