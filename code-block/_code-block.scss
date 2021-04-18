@@ -1,12 +1,15 @@
 @mixin code-block {
-  background: var(--bg1);
-  border-top: 0.1rem solid var(--pink);
-  border-bottom: 0.1rem solid var(--pink);
-  display: flex;
-  justify-content: center;
-  width: 100vw;
+  pre {
+    background: var(--bg1);
+    border-top: 0.1rem solid var(--pink);
+    border-bottom: 0.1rem solid var(--pink);
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    width: 100vw;
+  }
 
-  code {
+  pre code {
     color: var(--fg);
     font-family: var(--mono);
     font-size: var(--f12);

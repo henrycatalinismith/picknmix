@@ -1,18 +1,12 @@
-@use "../blockquote/blockquote" as *;
-@use "../code-block/code-block" as *;
-@use "../description-list/description-list" as *;
-@use "../paragraph/paragraph" as *;
-
 @mixin section {
-  justify-content: center;
-  display: grid;
-
-  blockquote {
-    @include blockquote;
+  section {
+    justify-content: center;
+    display: grid;
+    row-gap: 2rem;
   }
 
-  dl {
-    @include description-list;
+  section + section {
+    margin-top: 2rem;
   }
 
   h2 {
@@ -23,17 +17,9 @@
     line-height: 1.5em;
     margin-top: 2rem;
     margin-bottom: 1rem;
+    margin: 0;
     text-align: left;
     width: var(--column);
-  }
-
-
-  p {
-    @include paragraph;
-  }
-
-  pre {
-    @include code-block;
   }
 }
 

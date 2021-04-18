@@ -1,25 +1,27 @@
 @mixin blockquote {
-  align-self: center;
-  background: var(--bg1);
-  box-shadow: 0 0 0.25rem var(--orange);
-  display: grid;
-  grid-template-columns: var(--column);
-  justify-content: center;
-  margin: 0;
-  padding: 2rem 0;
-  row-gap: 2rem;
-  width: var(--burst);
+  blockquote {
+    align-self: center;
+    background: var(--bg1);
+    box-shadow: 0 0 0.25rem var(--orange);
+    display: grid;
+    grid-template-columns: var(--column);
+    justify-content: center;
+    margin: 0;
+    padding: 2rem 0;
+    row-gap: 2rem;
+    width: var(--burst);
+  }
 
-  & > * {
+  blockquote > * {
     margin: 0;
     padding: 0;
   }
 
-  ul {
+  blockquote ul {
     padding-left: 1rem;
   }
 
-  footer a {
+  blockquote footer a {
     font-size: var(--f12);
     font-family: var(--slab);
     font-style: normal;

@@ -1,7 +1,10 @@
 @mixin paragraph {
-  color: var(--fg);
-  font-family: var(--slab);
-  font-size: var(--f12);
-  justify-self: center;
-  width: var(--column);
+  p {
+    color: var(--fg);
+    font-family: var(--slab);
+    font-size: var(--f12);
+    justify-self: center;
+    margin: 0;
+    width: var(--column);
+  }
 }

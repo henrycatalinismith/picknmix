@@ -1,19 +1,24 @@
 @mixin header {
-  display: grid;
-  justify-content: center;
-  justify-self: center;
-  min-height: var(--column);
-  place-content: center;
-  width: var(--column);
+  body > main > header,
+  body > article > header {
+    display: grid;
+    justify-content: center;
+    justify-self: center;
+    min-height: var(--column);
+    place-content: center;
+    width: var(--column);
+  }
 
-  h1 {
+  body > main > header h1,
+  body > article > header h1 {
     font-family: var(--slab);
     font-size: var(--f30);
     text-align: center;
     margin: 0;
   }
 
-  *:nth-child(2) {
+  body > main > header *:nth-child(2),
+  body > article > header *:nth-child(2) {
     color: var(--pink);
     font-family: var(--slab);
     font-size: var(--f14);

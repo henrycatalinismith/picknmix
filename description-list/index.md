@@ -38,9 +38,7 @@ examples:
         </dd>
       </dl>
     scss: |
-      dl {
-        @include picknmix.description-list;
-      }
+      @include picknmix.description-list;
 
 ---
 

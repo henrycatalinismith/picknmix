@@ -1,8 +1,10 @@
 @mixin description-list {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  width: var(--column);
+  dl {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: var(--column);
+  }
 
   dt {
     font-family: var(--slab);
