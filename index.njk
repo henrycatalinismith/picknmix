@@ -39,18 +39,20 @@ description: Some Sass mixins
         </p>
       </header>
 
-      <dl>
-        {% for feature in collections.features %}
-          <dt>
-            <a href="{{ url }}/{{ feature.data.name | slug }}">
-              {{ feature.data.name }}
-            </a>
-          </dt>
-          <dd>
-            {{ feature.data.description }}
-          </dd>
-        {% endfor %}
-      </dl>
+      <section>
+        <dl>
+          {% for feature in collections.features %}
+            <dt>
+              <a href="{{ url }}/{{ feature.data.name | slug }}">
+                {{ feature.data.name }}
+              </a>
+            </dt>
+            <dd>
+              {{ feature.data.description }}
+            </dd>
+          {% endfor %}
+        </dl>
+      </section>
 
     </main>
   </body>

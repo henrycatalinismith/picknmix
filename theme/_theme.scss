@@ -1,15 +1,7 @@
-@use "../blockquote/blockquote" as *;
 @use "../border-box/border-box" as *;
-@use "../code-block/code-block" as *;
-@use "../column/column" as *;
-@use "../description-list/description-list" as *;
-@use "../font-families/font-families" as *;
-@use "../font-sizes/font-sizes" as *;
 @use "../header/header" as *;
-@use "../margin/margin" as *;
-@use "../palette/palette" as *;
 @use "../root/root" as *;
-@use "../width/width" as *;
+@use "../section/section" as *;
 
 @mixin theme {
   @include border-box;
@@ -23,9 +15,8 @@
 
   article,
   main {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+    justify-content: center;
+    display: grid;
   }
 
   main > header,
@@ -33,16 +24,9 @@
     @include header;
   }
 
-  blockquote {
-    @include blockquote;
-  }
-
-  dl {
-    @include description-list;
-  }
-
-  pre {
-    @include code-block;
+  article > section,
+  main > section {
+    @include section;
   }
 }
 
