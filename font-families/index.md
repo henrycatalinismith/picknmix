@@ -73,7 +73,7 @@ of manual steps in the browser dev tools.
 Assuming all the fonts have been installed locally, here's how this mixin
 allows for a bit of quick testing to see how something looks in e.g. Windows.
 
-```
+```scss
 @include picknmix.font-families("Windows");
 ```
 

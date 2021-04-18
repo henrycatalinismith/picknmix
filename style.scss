@@ -2,30 +2,6 @@
 
 @include picknmix.theme;
 
-pre > code {
-  font-family: var(--mono);
-  font-size: 1rem;
-}
-
-pre[class^="language-"] {
-  background: var(--bg1);
-  border-top: 0.1rem solid var(--pink);
-  border-bottom: 0.1rem solid var(--pink);
-  display: flex;
-  justify-content: center;
-  padding: 2rem 0rem;
-  width: 100vw;
-}
-
-pre[class^="language-"] > code {
-  color: var(--fg);
-  font-family: var(--mono);
-  font-size: var(--f12);
-  min-width: var(--width);
-  overflow-x: scroll;
-  padding: 0 var(--margin);
-}
-
 .mixin,
 .content {
   display: grid;
@@ -68,7 +44,6 @@ h2 {
   width: var(--column);
 }
 
-pre,
 svg {
   overflow: hidden;
   width: var(--column);

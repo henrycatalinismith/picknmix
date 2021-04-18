@@ -12,7 +12,7 @@
     margin: 0;
   }
 
-  p {
+  *:nth-child(2) {
     color: var(--pink);
     font-family: var(--slab);
     font-size: var(--f14);

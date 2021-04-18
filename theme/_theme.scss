@@ -1,5 +1,6 @@
 @use "../blockquote/blockquote" as *;
 @use "../border-box/border-box" as *;
+@use "../code-block/code-block" as *;
 @use "../column/column" as *;
 @use "../description-list/description-list" as *;
 @use "../font-families/font-families" as *;
@@ -38,6 +39,10 @@
 
   dl {
     @include description-list;
+  }
+
+  pre {
+    @include code-block;
   }
 }
 
