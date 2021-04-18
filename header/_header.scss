@@ -1,6 +1,7 @@
 @mixin header {
   display: grid;
   justify-content: center;
+  justify-self: center;
   min-height: var(--column);
   place-content: center;
   width: var(--column);
