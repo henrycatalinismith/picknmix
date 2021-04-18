@@ -1,7 +1,7 @@
 @mixin section {
   section {
-    justify-content: center;
     display: grid;
+    justify-items: center;
     row-gap: 2rem;
   }
 

@@ -1,7 +1,7 @@
 {
   "name": "@hendotcat/picknmix",
   "description": "Some Sass mixins",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "license": "MIT",
   "author": {
     "name": "Henry Catalini Smith",
@@ -20,6 +20,7 @@
   "files": [
     "picknmix.scss",
     "blockquote/_blockquote.scss",
+    "body/_body.scss",
     "border-box/_border-box.scss",
     "burst/_burst.scss",
     "code-block/_code-block.scss",
@@ -29,11 +30,13 @@
     "font-sizes/_font-sizes.scss",
     "header/_header.scss",
     "margin/_margin.scss",
+    "ordered-list/_ordered-list.scss",
     "palette/_palette.scss",
     "paragraph/_paragraph.scss",
     "root/_root.scss",
     "section/_section.scss",
     "theme/_theme.scss",
+    "unordered-list/_unordered-list.scss",
     "viewport-fill/_viewport-fill.scss",
     "width/_width.scss"
   ],

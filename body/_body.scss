@@ -1,0 +1,10 @@
+@mixin body {
+  body {
+    background-color: var(--bg0);
+    color: var(--fg);
+    font-family: var(--slab);
+    font-size: var(--f12);
+    margin: 0;
+  }
+}
+

@@ -1,28 +1,28 @@
 @use "../blockquote/blockquote" as *;
+@use "../body/body" as *;
 @use "../border-box/border-box" as *;
 @use "../code-block/code-block" as *;
 @use "../description-list/description-list" as *;
 @use "../header/header" as *;
+@use "../ordered-list/ordered-list" as *;
 @use "../paragraph/paragraph" as *;
 @use "../root/root" as *;
 @use "../section/section" as *;
+@use "../unordered-list/unordered-list" as *;
 
 @mixin theme {
   @include border-box;
   @include root;
 
+  @include body;
   @include blockquote;
   @include code-block;
   @include description-list;
   @include header;
+  @include ordered-list;
   @include paragraph;
   @include section;
-
-  body {
-    background-color: var(--bg0);
-    color: var(--fg);
-    margin: 0;
-  }
+  @include unordered-list;
 
   article,
   main {

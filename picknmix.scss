@@ -1,5 +1,6 @@
 @forward "./blockquote/blockquote";
 @forward "./border-box/border-box";
+@forward "./body/body";
 @forward "./burst/burst";
 @forward "./code-block/code-block";
 @forward "./column/column";
@@ -8,10 +9,13 @@
 @forward "./font-sizes/font-sizes";
 @forward "./header/header";
 @forward "./margin/margin";
+@forward "./ordered-list/ordered-list";
 @forward "./palette/palette";
+@forward "./paragraph/paragraph";
 @forward "./root/root";
 @forward "./section/section";
 @forward "./theme/theme";
+@forward "./unordered-list/unordered-list";
 @forward "./viewport-fill/viewport-fill";
 @forward "./width/width";
 
