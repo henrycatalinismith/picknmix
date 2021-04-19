@@ -31,28 +31,34 @@ description: Some Sass mixins
     <main>
 
       <header>
-        <h1>
-          {{ title }}
+        <h1 class="svg-text">
+          <span>{{ title }}</span>
+          <svg xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round" viewBox="-2.5 0 41 8" preserveAspectRatio="xMidyMid meet">
+            <path stroke="#000" stroke-width="2.8" d="M0 6V3h2v2H0"/>
+            <path stroke="#000" stroke-width="2.8" d="M0 6V3h2v2H0"/>
+            <path stroke="#fff1e8" d="M0 6V3h2v2H0"/>
+            <path stroke="#000" stroke-width="2.8" d="M4.8 3h2m-2 3h2m-1-3v3"/>
+            <path stroke="#fff1e8" d="M4.8 3h2m-2 3h2m-1-3v3"/>
+            <path stroke="#000" stroke-width="2.8" d="M11.6 3h-2v3h2"/>
+            <path stroke="#fff1e8" d="M11.6 3h-2v3h2"/>
+            <path stroke="#000" stroke-width="2.8" d="M14.4 3v3m0-1l2-2m-1 1l1 1v1"/>
+            <path stroke="#fff1e8" d="M14.4 3v3m0-1l2-2m-1 1l1 1v1"/>
+            <path stroke="#000" stroke-width="2.8" d="M19.2 6V3h1l1 1v2"/>
+            <path stroke="#fff1e8" d="M19.2 6V3h1l1 1v2"/>
+            <path stroke="#000" stroke-width="2.8" d="M24 6V3l1 1 1-1v3"/>
+            <path stroke="#fff1e8" d="M24 6V3l1 1 1-1v3"/>
+            <path stroke="#000" stroke-width="2.8" d="M28.8 3h2m-2 3h2m-1-3v3"/>
+            <path stroke="#fff1e8" d="M28.8 3h2m-2 3h2m-1-3v3"/>
+            <path stroke="#000" stroke-width="2.8" d="M33.6 3l2 2v1m0-3l-2 2v1"/>
+            <path stroke="#fff1e8" d="M33.6 3l2 2v1m0-3l-2 2v1"/>
+          </svg>
+
+
         </h1>
         <p>
           {{ description }}
         </p>
       </header>
-
-      <section>
-        <dl>
-          {% for mixin in collections.mixins %}
-            <dt>
-              <a href="{{ url }}/mixins/{{ mixin.data.name | slug }}">
-                {{ mixin.data.name }}
-              </a>
-            </dt>
-            <dd>
-              {{ mixin.data.description }}
-            </dd>
-          {% endfor %}
-        </dl>
-      </section>
 
       <footer>
         Henry Catalini Smith

@@ -2,6 +2,10 @@
 
 @include picknmix.theme;
 
+.svg-text {
+  @include picknmix.svg-text(20rem, 4rem);
+}
+
 .mixin,
 .content {
   display: grid;

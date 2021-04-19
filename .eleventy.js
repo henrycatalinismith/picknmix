@@ -62,8 +62,7 @@ module.exports = function(eleventyConfig) {
     }
   )
 
-  eleventyConfig.addPassthroughCopy("column/margin-pause.mp4")
-  eleventyConfig.addPassthroughCopy("column/mobile-zoom.mp4")
+  eleventyConfig.addPassthroughCopy("picknmix.svg")
   eleventyConfig.addPassthroughCopy("plots/*.svg")
   eleventyConfig.addPassthroughCopy("videos/*.mp4")
 
