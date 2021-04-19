@@ -18,21 +18,23 @@ examples:
         display: flex;
       }
 
-markdown: |
+notes:
+  - title: About
+    text: |
+      This mixin provides a CSS variable called `--margin` which can be used as
+      a margin around page content. It supports viewport widths as narrow as
+      128px.  For widths below 256px it applies no margin in order to conserve
+      space for content.  A 16px margin is applied to mobile viewports to
+      create some breathing room around content. Once the viewport width
+      exceeds the maximum width of the [column], the margin drops back to zero.
+      [column]: /column
 
-  This mixin provides a CSS variable called `--margin` which can be used as a
-  margin around page content. It supports viewport widths as narrow as 128px.
-  For widths below 256px it applies no margin in order to conserve space for
-  content.  A 16px margin is applied to mobile viewports to create some
-  breathing room around content. Once the viewport width exceeds the maximum
-  width of the [column], the margin drops back to zero.
+  - title: Behavior
+    text: |
+      The following graph shows the growth of the margin for viewport widths
+      from 128px to 1024px.
 
-  The following graph shows the growth of the margin for viewport widths from
-  128px to 1024px.
-
-  <img src="/plots/margin.svg" />
-
-  [column]: /column
+      <img src="/plots/margin.svg" />
 
 */
 

@@ -2,14 +2,18 @@
 name: width
 layout: mixin
 description: Simple content width limit
-markdown: |
-  This mixin provides a CSS variable called `--width` which can be used as a
-  width limit constraining content to with 512px.
+notes:
+  - title: About
+    text: |
+      This mixin provides a CSS variable called `--width` which can be used as
+      a width limit constraining content to with 512px.
 
-  The following graph shows the growth of the width for viewport widths from
-  128px to 1024px.
+  - title: Behavior
+    text: |
+      The following graph shows the growth of the width for viewport widths
+      from 128px to 1024px.
 
-  <img src="/plots/width.svg" />
+      <img src="/plots/width.svg" />
 
 */
 

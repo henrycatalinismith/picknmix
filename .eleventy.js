@@ -144,9 +144,17 @@ module.exports = function(eleventyConfig) {
       return { data }
     },
     compile: (permalink, inputPath) => data => {
-      return markdownIt({
-        html: true,
-      }).render(data.markdown || "")
+      if (!data.notes) {
+        return ""
+      }
+
+      const notes = "<section>" + (data.notes || []).map(note => {
+        return markdownIt({
+          html: true,
+        }).render(`## ${note.title}\n${note.text}`)
+      }).join("</section><section>") + "</section>"
+
+      return notes
     }
   })
 }
