@@ -1,7 +1,7 @@
 {
   "name": "@hendotcat/picknmix",
   "description": "Some Sass mixins",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "license": "MIT",
   "author": {
     "name": "Henry Catalini Smith",
@@ -28,6 +28,7 @@
     "description-list/_description-list.scss",
     "font-families/_font-families.scss",
     "font-sizes/_font-sizes.scss",
+    "footer/_footer.scss",
     "header/_header.scss",
     "margin/_margin.scss",
     "ordered-list/_ordered-list.scss",
