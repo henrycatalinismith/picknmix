@@ -41,14 +41,14 @@ description: Some Sass mixins
 
       <section>
         <dl>
-          {% for feature in collections.features %}
+          {% for mixin in collections.mixins %}
             <dt>
-              <a href="{{ url }}/{{ feature.data.name | slug }}">
-                {{ feature.data.name }}
+              <a href="{{ url }}/mixins/{{ mixin.data.name | slug }}">
+                {{ mixin.data.name }}
               </a>
             </dt>
             <dd>
-              {{ feature.data.description }}
+              {{ mixin.data.description }}
             </dd>
           {% endfor %}
         </dl>

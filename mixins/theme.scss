@@ -1,0 +1,46 @@
+/*
+name: theme
+layout: mixin
+description: Quick setup of all mixins
+dependencies:
+  - blockquote
+  - body
+  - border-box
+  - code-block
+  - description-list
+  - header
+  - ordered-list
+  - paragraph
+  - section
+  - unordered-list
+  - root
+*/
+
+@use "../mixins/blockquote" as *;
+@use "../mixins/body" as *;
+@use "../mixins/border-box" as *;
+@use "../mixins/code-block" as *;
+@use "../mixins/description-list" as *;
+@use "../mixins/footer" as *;
+@use "../mixins/header" as *;
+@use "../mixins/ordered-list" as *;
+@use "../mixins/paragraph" as *;
+@use "../mixins/root" as *;
+@use "../mixins/section" as *;
+@use "../mixins/unordered-list" as *;
+
+@mixin theme {
+  @include root;
+  @include border-box;
+  @include body;
+  @include blockquote;
+  @include code-block;
+  @include description-list;
+  @include footer;
+  @include header;
+  @include ordered-list;
+  @include paragraph;
+  @include section;
+  @include unordered-list;
+}
+

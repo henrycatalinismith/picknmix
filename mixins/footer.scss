@@ -1,0 +1,25 @@
+/*
+name: footer
+layout: mixin
+description: Quiet, minimalist footers
+dependencies:
+  - column
+  - font-families
+  - font-sizes
+  - palette
+*/
+
+@mixin footer {
+  body > footer,
+  body > main > footer,
+  body > article > footer {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: var(--margin);
+    min-height: var(--column);
+    width: var(--column);
+  }
+}
+

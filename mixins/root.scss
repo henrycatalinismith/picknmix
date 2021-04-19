@@ -1,0 +1,34 @@
+/*
+name: root
+layout: mixin
+description: Set up all the CSS variables in :root
+dependencies:
+  - burst
+  - column
+  - font-families
+  - font-sizes
+  - margin
+  - palette
+  - width
+*/
+
+@use "../mixins/burst" as *;
+@use "../mixins/column" as *;
+@use "../mixins/font-families" as *;
+@use "../mixins/font-sizes" as *;
+@use "../mixins/margin" as *;
+@use "../mixins/palette" as *;
+@use "../mixins/width" as *;
+
+@mixin root {
+  :root {
+    @include burst;
+    @include column;
+    @include font-families;
+    @include font-sizes;
+    @include margin;
+    @include palette;
+    @include width;
+  }
+}
+

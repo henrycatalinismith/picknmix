@@ -1,0 +1,19 @@
+/*
+name: paragraph
+layout: mixin
+description: Body text styles
+dependencies:
+  - column
+  - font-families
+  - font-sizes
+  - palette
+*/
+
+@mixin paragraph {
+  p {
+    color: var(--fg);
+    justify-self: center;
+    margin: 0;
+    width: var(--column);
+  }
+}

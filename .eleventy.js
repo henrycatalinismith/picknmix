@@ -1,5 +1,8 @@
+const markdownIt = require("markdown-it")
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const fs = require("fs-extra")
+const yaml = require("js-yaml")
+const _ = require("lodash")
 const htmlmin = require("html-minifier")
 const { JSDOM } = require("jsdom")
 const sass = require("sass")
@@ -8,24 +11,24 @@ module.exports = function(eleventyConfig) {
   console.log("picknmix")
 
   eleventyConfig.addCollection(
-    "features",
+    "mixins",
     function(collectionApi) {
       return collectionApi
-        .getFilteredByGlob("*/*.md")
+        .getFilteredByGlob("mixins/*.scss")
         .sort((a, b) =>
           a.data.name > b.data.name ? 1
             : a.data.name < b.data.name ? -1 : 0
         ).map(f => {
           f.data.dependencies = (f.data.dependencies || []).map(name => {
             return collectionApi
-              .getFilteredByGlob(`${name}/index.md`)[0]
+              .getFilteredByGlob(`mixins/${name}.scss`)[0]
           })
           return f
         }).map(f => {
           f.data.dependents = collectionApi
-            .getFilteredByGlob("*/*.md")
+            .getFilteredByGlob("mixins/*.scss")
             .filter(g => {
-              const names = g.data.dependencies.map(d => d.data.name)
+              const names = g.data.dependencies.map(d => d?.data?.name)
               return names.includes(f.data.name)
             })
           return f
@@ -36,7 +39,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection(
     "examples",
     function(collectionApi) {
-      const mixins = collectionApi.getFilteredByGlob("*/*.md")
+      const mixins = collectionApi.getFilteredByGlob("mixins/*.scss")
       const examples = []
 
       mixins.forEach(mixin => {
@@ -61,8 +64,8 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("column/margin-pause.mp4")
   eleventyConfig.addPassthroughCopy("column/mobile-zoom.mp4")
-  eleventyConfig.addPassthroughCopy("font-sizes/margin-pause.mp4")
-  eleventyConfig.addPassthroughCopy("font-sizes/mobile-zoom.mp4")
+  eleventyConfig.addPassthroughCopy("plots/*.svg")
+  eleventyConfig.addPassthroughCopy("videos/*.mp4")
 
   eleventyConfig.addPlugin(syntaxHighlight)
 
@@ -125,5 +128,27 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget("picknmix.scss")
   eleventyConfig.addWatchTarget("style.scss")
   eleventyConfig.addWatchTarget("**/*.scss")
+
+  eleventyConfig.addTemplateFormats("scss")
+  eleventyConfig.addExtension("scss", {
+    read: false,
+    data: true,
+    getData: true,
+    getInstanceFromInputPath: async (inputPath) => {
+      const scss = fs.readFileSync(inputPath, "utf-8")
+      const lines = scss.split(/\n/)
+      const pivot = _.indexOf(lines, "*/")
+      const frontmatter = lines.slice(1, pivot).join("\n")
+      const mixin = lines.slice(pivot + 2).join("\n")
+      const data = yaml.load(frontmatter)
+      data.mixin = mixin
+      return { data }
+    },
+    compile: (permalink, inputPath) => data => {
+      return markdownIt({
+        html: true,
+      }).render(data.markdown || "")
+    }
+  })
 }
 

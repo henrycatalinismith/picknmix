@@ -1,39 +1,19 @@
----js
-{
-  src: function(name) {
-    const fs = require("fs-extra")
-    const path = `${name}/_${name}.scss`
-    const src = fs.readFileSync(path)
-    return src
-  }
-}
----
 <!doctype html>
 <html
   lang="en"
   dir="ltr">
   <head>
     <meta charset="utf-8" />
-
-    <link
-      rel="canonical"
-      href="https://hen.cat/picknmix/{{ name }}"
-    />
-
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1"
     />
-
     <style>
     	{{ css | safe }}
     </style>
-
-    <title>
-      {{ name }} mixin
-    </title>
   </head>
   <body>
+
     <article>
       <header>
         <h1>
@@ -45,7 +25,7 @@
       </header>
 
       <section>
-        {% highlight "scss" %}{{ src(name) | safe }}{% endhighlight %}
+        {% highlight "scss" %}{{ mixin | safe }}{% endhighlight %}
       </section>
 
       <section>
@@ -60,7 +40,7 @@
           <dl>
             {% for example in examples %}
               <dt>
-                <a href="/{{ name }}/examples/{{ example.name | slug }}">
+                <a href="/examples/{{ example.name | slug }}">
                   {{ example.name }}
                 </a>
               </dt>
@@ -80,7 +60,7 @@
           <dl>
             {% for dependency in dependencies %}
               <dt>
-                <a href="/{{ dependency.data.name }}">
+                <a href="/mixins/{{ dependency.data.name }}">
                   {{ dependency.data.name }}
                 </a>
               </dt>
@@ -100,7 +80,7 @@
           <dl>
             {% for dependent in dependents %}
               <dt>
-                <a href="/{{ dependent.data.name }}">
+                <a href="/mixins/{{ dependent.data.name }}">
                   {{ dependent.data.name }}
                 </a>
               </dt>
@@ -111,7 +91,8 @@
           </dl>
         </section>
       {% endif %}
+
     </article>
+
   </body>
 </html>
-

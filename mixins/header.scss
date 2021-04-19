@@ -1,0 +1,43 @@
+/*
+name: header
+layout: mixin
+description: Eye-catching & accessible page headers
+dependencies:
+  - column
+  - font-families
+  - font-sizes
+  - palette
+*/
+
+@mixin header {
+  body > header:first-child,
+  body > main > header,
+  body > article > header {
+    display: grid;
+    justify-content: center;
+    justify-self: center;
+    min-height: var(--column);
+    place-content: center;
+    width: var(--column);
+  }
+
+  body > header:first-child h1,
+  body > main > header h1,
+  body > article > header h1 {
+    font-family: var(--slab);
+    font-size: var(--f30);
+    text-align: center;
+    margin: 0;
+  }
+
+  body > header:first-child *:nth-child(2),
+  body > main > header *:nth-child(2),
+  body > article > header *:nth-child(2) {
+    color: var(--pink);
+    font-family: var(--slab);
+    font-size: var(--f14);
+    margin: 0;
+    text-align: center;
+  }
+}
+

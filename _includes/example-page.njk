@@ -21,27 +21,25 @@
 
   </head>
   <body>
-    <main>
-      <article class="mixin">
-        <header>
-          <h1>
-            {{ example.name }}
-          </h1>
-          <p>
-            {{ example.description }}
-          </p>
-        </header>
+    <article class="mixin">
+      <header>
+        <h1>
+          {{ example.name }}
+        </h1>
+        <p>
+          {{ example.description }}
+        </p>
+      </header>
 
-        <iframe src="/{{ example.mixin }}/examples/{{ example.name | slug }}/iframe.html"></iframe>
+      <iframe src="/examples/{{ example.name | slug }}/iframe.html"></iframe>
 
-        <h2>Stylesheet</h2>
-        {% highlight "scss" %}{{ example.scss | safe }}{% endhighlight %}
+      <h2>Stylesheet</h2>
+      {% highlight "scss" %}{{ example.scss | safe }}{% endhighlight %}
 
-        <h2>Markup</h2>
-        {% highlight "html" %}{{ example.html | safe }}{% endhighlight %}
+      <h2>Markup</h2>
+      {% highlight "html" %}{{ example.html | safe }}{% endhighlight %}
 
-      </article>
-    </main>
+    </article>
   </body>
 </html>
 

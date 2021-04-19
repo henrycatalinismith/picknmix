@@ -1,0 +1,178 @@
+/*
+name: palette
+layout: mixin
+description: Accessible palette using only named CSS colors
+
+examples:
+  - name: dark palette
+    description: The dark color variant of the palette mixin
+    html: |
+      <div></div> <div></div>
+      <div></div> <div></div>
+      <div></div> <div></div>
+      <div></div> <div></div>
+      <div></div> <div></div>
+    scss: |
+      :root {
+        @include picknmix.palette(dark);
+      }
+
+      main {
+        align-content: space-around;
+        display: grid;
+        grid-template-columns: repeat(5, 20vw);
+        grid-template-rows: repeat(2, 50vh);
+        justify-content: space-around;
+        height: 100%;
+      }
+
+      div:nth-child(1)  { background: var(--bg0); }
+      div:nth-child(2)  { background: var(--bg1); }
+      div:nth-child(3)  { background: var(--fg); }
+      div:nth-child(4)  { background: var(--red); }
+      div:nth-child(5)  { background: var(--orange); }
+      div:nth-child(6)  { background: var(--yellow); }
+      div:nth-child(7)  { background: var(--green); }
+      div:nth-child(8)  { background: var(--blue); }
+      div:nth-child(9)  { background: var(--pink); }
+      div:nth-child(10) { background: var(--purple); }
+
+  - name: light palette
+    description: The light color variant of the palette mixin
+    html: |
+      <div></div> <div></div>
+      <div></div> <div></div>
+      <div></div> <div></div>
+      <div></div> <div></div>
+      <div></div> <div></div>
+    scss: |
+      :root {
+        @include picknmix.palette(light);
+      }
+
+      main {
+        align-content: space-around;
+        display: grid;
+        grid-template-columns: repeat(5, 20vw);
+        grid-template-rows: repeat(2, 50vh);
+        justify-content: space-around;
+        height: 100%;
+      }
+
+      div:nth-child(1)  { background: var(--bg0); }
+      div:nth-child(2)  { background: var(--bg1); }
+      div:nth-child(3)  { background: var(--fg); }
+      div:nth-child(4)  { background: var(--red); }
+      div:nth-child(5)  { background: var(--orange); }
+      div:nth-child(6)  { background: var(--yellow); }
+      div:nth-child(7)  { background: var(--green); }
+      div:nth-child(8)  { background: var(--blue); }
+      div:nth-child(9)  { background: var(--pink); }
+      div:nth-child(10) { background: var(--purple); }
+
+markdown: |
+
+  This mixin sets up a palette of color variables using only named CSS colors
+  such as `green`, `blue`, `orange` etc. The palette includes two background
+  colors: `--bg0` for the main background and `--bg1` for a highlighted
+  background layer "on top of" the main one. It also includes a primary
+  foreground color (`--fg`) and seven rainbow colors for other foreground
+  content.
+
+  The mixin respects the user's [`prefers-color-scheme`][prefers-color-scheme]
+  setting. This means that users with dark mode enabled get a version of the
+  palette with a darker background color and lighter foreground colors, and
+  everyone else gets a version with a lighter background and darker foreground
+  colors. This is not yet a WCAG success criterion, but there has been at least
+  [some discussion about the prospect][w3c/wcag#1074].
+
+  To the extent possible, both the dark mode and light mode palettes generated
+  by this mixin conform to WCAG SC 1.4.3.
+
+  <blockquote>
+    <p>
+      1.4.3 Contrast (Minimum): The visual presentation of text and images of
+      text has a contrast ratio of at least 4.5:1, except for the following:
+      (Level AA)
+    </p>
+    <ul>
+      <li>
+        <strong>Large Text</strong>:
+        Large-scale text and images of large-scale text have a contrast ratio
+        of at least 3:1;
+      </li>
+      <li>
+        <strong>Incidental</strong>:
+        Text or images of text that are part of an inactive user interface
+        component, that are pure decoration, that are not visible to anyone, or
+        that are part of a picture that contains significant other visual
+        content, have no contrast requirement.
+      </li>
+      <li>
+        <strong>Logotypes</strong>:
+        Text that is part of a logo or brand name has no minimum contrast
+        requirement.
+      </li>
+    </ul>
+    <footer>
+      <cite>
+        <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html">
+          WCAG 2.0 SC 1.4.3
+        </a>
+      </cite>
+    </footer>
+  </blockquote>
+
+  Fulfilling this requirement using only named CSS colors is very challenging.
+  There are no named CSS colors with yellow or orange hues that provide AA
+  contrast or above with any white or white-adjacent background colors. So
+  although this mixin provides `--orange` and `--yellow` values, they are only
+  safe to use in contexts matching the "Incidental" or "Logotypes" exemptions
+  to success criterion 1.4.3.
+
+  [WCAG SC 1.4.3]: https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html
+  [prefers-color-scheme]: https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme
+  [w3c/wcag#1074]: https://github.com/w3c/wcag/issues/1074
+
+*/
+
+@mixin color-scheme($name, $force) {
+  @if $force == null {
+    @media (prefers-color-scheme: #{$name}) {
+      @content;
+    }
+  } @else if $force == $name {
+    @media all {
+      @content;
+    }
+  }
+}
+
+@mixin palette($force: null) {
+  @include color-scheme(light, $force) {
+    --bg0: ghostwhite;
+    --bg1: lavenderblush;
+    --fg: darkslategray;
+    --red: firebrick;
+    --orange: orangered;
+    --yellow: gold;
+    --green: green;
+    --blue: blue;
+    --pink: mediumvioletred;
+    --purple: rebeccapurple;
+  }
+
+  @include color-scheme(dark, $force) {
+    --bg0: black;
+    --bg1: midnightblue;
+    --fg: ghostwhite;
+    --red: tomato;
+    --orange: orange;
+    --yellow: khaki;
+    --green: limegreen;
+    --blue: deepskyblue;
+    --pink: hotpink;
+    --purple: fuchsia;
+  }
+}
+

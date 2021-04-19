@@ -1,0 +1,19 @@
+/*
+name: viewport-fill
+layout: mixin
+description: Fit the body element's size to the viewport
+*/
+
+@mixin viewport-fill {
+  html {
+    overflow: hidden;
+  }
+
+  body {
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    width: 100vw;
+  }
+}
+
