@@ -56,6 +56,20 @@ module.exports = function(eleventyConfig) {
   )
 
   eleventyConfig.addGlobalData(
+    "readmeSections",
+    function() {
+      const readmeMarkdown = fs.readFileSync("readme.md", "utf-8")
+      const readmeHtml = markdownIt({ html: true }).render(readmeMarkdown)
+      const readmeDocument = new JSDOM(readmeHtml)
+      const readmeSections = []
+      for (const section of readmeDocument.window.document.querySelectorAll("section")) {
+        readmeSections.push(section.outerHTML)
+      }
+      return readmeSections
+    }
+  )
+
+  eleventyConfig.addGlobalData(
     "css",
     function() {
       return sass.renderSync({ file: "style.scss" }).css
@@ -143,6 +157,7 @@ module.exports = function(eleventyConfig) {
       data.mixin = mixin
       return { data }
     },
+
     compile: (permalink, inputPath) => data => {
       if (!data.notes) {
         return ""

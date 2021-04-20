@@ -30,10 +30,17 @@ description: Some Sass mixins
   <body>
     <main>
 
-      <header>
-        <h1 class="svg-text">
+      <header class="hero">
+        <h1>
           <span>{{ title }}</span>
-          <svg xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round" viewBox="-2.5 0 41 8" preserveAspectRatio="xMidyMid meet">
+          <svg
+            aria-labelledby="svg-title"
+            preserveAspectRatio="xMidyMid meet"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="-2.5 0 41 8">
+            <title id="svg-title">picknmix</title>
             <path stroke="#000" stroke-width="2.8" d="M0 6V3h2v2H0"/>
             <path stroke="#000" stroke-width="2.8" d="M0 6V3h2v2H0"/>
             <path stroke="#fff1e8" d="M0 6V3h2v2H0"/>
@@ -52,13 +59,15 @@ description: Some Sass mixins
             <path stroke="#000" stroke-width="2.8" d="M33.6 3l2 2v1m0-3l-2 2v1"/>
             <path stroke="#fff1e8" d="M33.6 3l2 2v1m0-3l-2 2v1"/>
           </svg>
-
-
         </h1>
         <p>
           {{ description }}
         </p>
       </header>
+
+      {% for section in readmeSections %}
+        {{ section | safe }}
+      {% endfor %}
 
       <footer>
         Henry Catalini Smith
