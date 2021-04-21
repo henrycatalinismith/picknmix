@@ -41,13 +41,4 @@
     convince future me that it still works, cos I tend to lose faith in code I
     haven't touched in a while if I didn't document it.
   </p>
-  <p>
-    Another reason for the docs is that I'm optimistic that some of the pages
-    here might be useful to share with a colleague or collaborator someday, cos
-    there are one or two ideas here that might be handy for other work. I also
-    like the idea of enabling somebody to make an important point in a funny
-    way at their job by pointing out that this random crappy free personal
-    mixin library they've found has a better accessibility strategy than their
-    company's expensive proprietary design system.
-  </p>
 </section>

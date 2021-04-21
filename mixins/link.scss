@@ -1,0 +1,26 @@
+/*
+name: link
+layout: mixin
+description: Link styles with nice focus states
+dependencies:
+  - palette
+*/
+
+@mixin link {
+  a[href] {
+    color: var(--blue);
+  }
+
+  a[href]:focus {
+    background-color: var(--blue);
+    box-shadow:
+      0 -0.4em var(--blue),
+      0 0.1em var(--blue);
+    color: var(--bg0);
+
+    position: relative;
+    outline: none;
+    text-decoration: none;
+  }
+}
+

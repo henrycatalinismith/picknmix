@@ -9,6 +9,7 @@ dependencies:
   - code-block
   - description-list
   - header
+  - link
   - ordered-list
   - paragraph
   - section
@@ -23,6 +24,7 @@ dependencies:
 @use "../mixins/description-list" as *;
 @use "../mixins/footer" as *;
 @use "../mixins/header" as *;
+@use "../mixins/link" as *;
 @use "../mixins/ordered-list" as *;
 @use "../mixins/paragraph" as *;
 @use "../mixins/root" as *;
@@ -38,6 +40,7 @@ dependencies:
   @include description-list;
   @include footer;
   @include header;
+  @include link;
   @include ordered-list;
   @include paragraph;
   @include section;
