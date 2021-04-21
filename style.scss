@@ -7,6 +7,14 @@ permalink: false
 @include picknmix.theme;
 
 .hero {
+  display: grid;
+  row-gap: 1rem;
+
+  h1 {
+    display: flex;
+    justify-content: center;
+  }
+
   h1 span {
     display: none;
   }
@@ -14,6 +22,13 @@ permalink: false
   h1 svg {
     height: 4rem;
     width: 20rem;
+  }
+
+  ol {
+    display: grid;
+    list-style-type: none;
+    margin: 0;
+    place-content: center;
   }
 }
 

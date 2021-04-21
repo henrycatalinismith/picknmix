@@ -1,6 +1,9 @@
 ---
 title: picknmix
 description: Some Sass mixins
+links:
+  - text: Browse
+    href: /mixins
 ---
 <!doctype html>
 <html
@@ -63,6 +66,17 @@ description: Some Sass mixins
         <p>
           {{ description }}
         </p>
+        <nav>
+          <ol>
+            {% for link in links %}
+              <li>
+                <a href="{{ link.href }}">
+                  {{ link.text }}
+                </a>
+              </li>
+            {% endfor %}
+          </ol>
+        </nav>
       </header>
 
       {% for section in readmeSections %}
