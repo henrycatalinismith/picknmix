@@ -154,6 +154,7 @@ module.exports = function(eleventyConfig) {
       const frontmatter = lines.slice(1, pivot).join("\n")
       const mixin = lines.slice(pivot + 2).join("\n")
       const data = yaml.load(frontmatter)
+      data.layout = "mixin"
       data.mixin = mixin
       return { data }
     },
