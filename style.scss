@@ -31,6 +31,11 @@ permalink: false
     padding: 0;
     place-content: center;
   }
+
+  ol a {
+    font-weight: bold;
+    text-decoration: none;
+  }
 }
 
 .mixin,
