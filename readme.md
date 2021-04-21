@@ -16,6 +16,9 @@
   <a href="https://hen.cat/picknmix">
     <strong><code>[homepage]</code></strong>
   </a>
+  <a href="https://hen.cat/picknmix/mixins">
+    <strong><code>[browse]</code></strong>
+  </a>
 </p>
 
 <section>
@@ -42,3 +45,20 @@
     haven't touched in a while if I didn't document it.
   </p>
 </section>
+
+<section>
+  <h2>License</h2>
+  <p>
+    <a href="http://creativecommons.org/publicdomain/zero/1.0/">
+      <img
+        alt="License: CC0-1.0"
+        src="https://licensebuttons.net/p/zero/1.0/88x31.png"
+      />
+    </a>
+  </p>
+  <p>
+    If you find something here that you wanna copypaste into your own stuff
+    then hell yeah, go for it! This is public domain code so go for your life!
+  </p>
+</section>
+
