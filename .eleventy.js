@@ -1,3 +1,4 @@
+const sassPlugin = require("@hendotcat/11tysass")
 const markdownIt = require("markdown-it")
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const fs = require("fs-extra")
@@ -69,12 +70,12 @@ module.exports = function(eleventyConfig) {
     }
   )
 
-  eleventyConfig.addGlobalData(
-    "css",
-    function() {
-      return sass.renderSync({ file: "style.scss" }).css
-    }
-  )
+  eleventyConfig.addPlugin(sassPlugin, {
+    files: [{
+      alias: "css",
+      file: "style.scss",
+    }],
+  })
 
   eleventyConfig.addPassthroughCopy("picknmix.svg")
   eleventyConfig.addPassthroughCopy("plots/*.svg")
@@ -139,7 +140,6 @@ module.exports = function(eleventyConfig) {
   )
 
   eleventyConfig.addWatchTarget("picknmix.scss")
-  eleventyConfig.addWatchTarget("style.scss")
   eleventyConfig.addWatchTarget("**/*.scss")
 
   eleventyConfig.addTemplateFormats("scss")
