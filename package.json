@@ -9,10 +9,10 @@
     "url": "https://hen.cat/"
   },
   "devDependencies": {
-    "@11ty/eleventy": "11ty/eleventy#v1.0.0-canary.10",
+    "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
     "@hendotcat/11tyhype": "^0.0.3",
-    "@hendotcat/11tysass": "^0.0.2",
+    "@hendotcat/11tysass": "^0.0.6",
     "fs-extra": "^9.1.0",
     "jsdom": "^16.5.2",
     "rehype": "^11.0.0",

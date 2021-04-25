@@ -58,7 +58,7 @@ module.exports = function(eleventyConfig) {
     }
   )
 
-  eleventyConfig.addGlobalData(
+  eleventyConfig.addCollection(
     "readmeSections",
     function() {
       const readmeMarkdown = fs.readFileSync("readme.md", "utf-8")
@@ -71,13 +71,6 @@ module.exports = function(eleventyConfig) {
       return readmeSections
     }
   )
-
-  eleventyConfig.addPlugin(sassPlugin, {
-    files: [{
-      alias: "css",
-      file: "style.scss",
-    }],
-  })
 
   eleventyConfig.addPassthroughCopy("picknmix.svg")
   eleventyConfig.addPassthroughCopy("plots/*.svg")
@@ -94,6 +87,14 @@ module.exports = function(eleventyConfig) {
         }
       }],
     ]
+  })
+
+  eleventyConfig.addPlugin(sassPlugin, {
+    files: [{
+      file: "style.scss",
+      outFile: "style.css",
+      outputStyle: "compressed",
+    }],
   })
 
   eleventyConfig.addWatchTarget("picknmix.scss")
