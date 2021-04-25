@@ -1,11 +1,12 @@
+const rehype = require("@hendotcat/11tyhype")
 const sassPlugin = require("@hendotcat/11tysass")
 const markdownIt = require("markdown-it")
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const fs = require("fs-extra")
 const yaml = require("js-yaml")
 const _ = require("lodash")
-const htmlmin = require("html-minifier")
 const { JSDOM } = require("jsdom")
+const rehypeMinifyWhitespace = require("rehype-minify-whitespace")
 const sass = require("sass")
 
 module.exports = function(eleventyConfig) {
@@ -83,19 +84,11 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPlugin(syntaxHighlight)
 
-  eleventyConfig.addTransform(
-    "htmlmin",
-    function(content, outputPath) {
-      if (outputPath && outputPath.endsWith(".html")) {
-        content = htmlmin.minify(content, {
-          useShortDoctype: true,
-          removeComments: true,
-          collapseWhitespace: true
-        })
-      }
-      return content
-    }
-  )
+  eleventyConfig.addPlugin(rehype, {
+    plugins: [
+      [rehypeMinifyWhitespace],
+    ]
+  })
 
   const url = process.env.CI ? "https://hen.cat/picknmix" : ""
 
