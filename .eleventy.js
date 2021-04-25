@@ -7,6 +7,7 @@ const yaml = require("js-yaml")
 const _ = require("lodash")
 const { JSDOM } = require("jsdom")
 const rehypeMinifyWhitespace = require("rehype-minify-whitespace")
+const rehypeUrls = require("rehype-urls")
 const sass = require("sass")
 
 module.exports = function(eleventyConfig) {
@@ -87,50 +88,13 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(rehype, {
     plugins: [
       [rehypeMinifyWhitespace],
+      [rehypeUrls, url => {
+        if (url.href.startsWith("/") && process.env.GITHUB_ACTIONS) {
+          return `https://hen.cat/picknmix/${url.href}`
+        }
+      }],
     ]
   })
-
-  const url = process.env.CI ? "https://hen.cat/picknmix" : ""
-
-  eleventyConfig.addTransform(
-    "links",
-    function(content, outputPath) {
-      if (outputPath && outputPath.endsWith(".html")) {
-        const dom = new JSDOM(content)
-        const links = dom.window.document.querySelectorAll("a")
-        const iframes = dom.window.document.querySelectorAll("iframe")
-        const images = dom.window.document.querySelectorAll("img")
-        const videos = dom.window.document.querySelectorAll("video")
-
-        for (const a of links) {
-          if (a.href.startsWith("/")) {
-            a.href = url + a.href
-          }
-        }
-
-        for (const img of images) {
-          if (img.src.startsWith("/")) {
-            img.src = url + img.src
-          }
-        }
-
-        for (const iframe of iframes) {
-          if (iframe.src.startsWith("/")) {
-            iframe.src = url + iframe.src
-          }
-        }
-
-        for (const video of videos) {
-          if (video.src.startsWith("/")) {
-            video.src = url + video.src
-          }
-        }
-
-        content = dom.serialize()
-      }
-      return content
-    }
-  )
 
   eleventyConfig.addWatchTarget("picknmix.scss")
   eleventyConfig.addWatchTarget("**/*.scss")
