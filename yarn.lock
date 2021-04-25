@@ -78,10 +78,10 @@
   dependencies:
     eazy-logger "3.1.0"
 
-"@hendotcat/11tysass@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@hendotcat/11tysass/-/11tysass-0.0.1.tgz#1d1d3b6fe756852385d7f562febec93ed26ac5e7"
-  integrity sha512-67ZMkZx1sveOb0uj/JPe7kYvwRpBXZ/A30b/xLe8jKJ/XsSU6tVCrGzJd9tXvIunCU/U3OY2BcrgQ/ljmjqbUQ==
+"@hendotcat/11tysass@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@hendotcat/11tysass/-/11tysass-0.0.2.tgz#daa602ae589b93c3c9c08b0b3a7b7a5bea8cd88e"
+  integrity sha512-OrZFM6phku7L5Bs3K201eNXrw0AMY96orGDUP7PkoHACXQsbsMdGpsWISaKIpoWrW8GNCektViZdA8uDNSFQAg==
   dependencies:
     eazy-logger "3.1.0"
 

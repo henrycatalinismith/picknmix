@@ -1,5 +1,5 @@
 const rehype = require("@hendotcat/11tyhype")
-const sassPlugin = require("@hendotcat/11tysass")
+const { sassPlugin } = require("@hendotcat/11tysass")
 const markdownIt = require("markdown-it")
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const fs = require("fs-extra")
