@@ -1,4 +1,4 @@
-const rehype = require("@hendotcat/11tyhype")
+const { rehypePlugin } = require("@hendotcat/11tyhype")
 const { sassPlugin } = require("@hendotcat/11tysass")
 const markdownIt = require("markdown-it")
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
@@ -85,7 +85,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPlugin(syntaxHighlight)
 
-  eleventyConfig.addPlugin(rehype, {
+  eleventyConfig.addPlugin(rehypePlugin, {
     plugins: [
       [rehypeMinifyWhitespace],
       [rehypeUrls, url => {
