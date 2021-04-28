@@ -12,7 +12,7 @@
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
     "@hendotcat/11tyhype": "^0.0.3",
-    "@hendotcat/11tysass": "^0.0.8",
+    "@hendotcat/11tysass": "^0.0.14",
     "fs-extra": "^9.1.0",
     "jsdom": "^16.5.2",
     "rehype": "^11.0.0",
