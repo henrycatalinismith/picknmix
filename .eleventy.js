@@ -78,6 +78,15 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPlugin(syntaxHighlight)
 
+  eleventyConfig.addPlugin(sassPlugin, {
+    files: [{
+      file: "style.scss",
+      outFile: "style.[hash].css",
+      outputStyle: "compressed",
+    }],
+    verbose: true,
+  })
+
   eleventyConfig.addPlugin(rehypePlugin, {
     plugins: [
       [rehypeMinifyWhitespace],
@@ -87,15 +96,6 @@ module.exports = function(eleventyConfig) {
         }
       }],
     ]
-  })
-
-  eleventyConfig.addPlugin(sassPlugin, {
-    files: [{
-      file: "style.scss",
-      outFile: "style.[hash].css",
-      outputStyle: "compressed",
-    }],
-    verbose: true,
   })
 
   eleventyConfig.addWatchTarget("picknmix.scss")
