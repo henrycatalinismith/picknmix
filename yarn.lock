@@ -72,19 +72,19 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@hendotcat/11tyhype@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@hendotcat/11tyhype/-/11tyhype-0.0.4.tgz#70f361afb12d1718cff0b08da9ccb4ad8d1bbfa9"
-  integrity sha512-oGxkOfCe4C2KKltdncbThuWmHNXlT1n3iI0EvTH+elsPcI98NuatNginV5bO4k854H3UBR6cYstvL99bovPOgw==
+"@hendotcat/11tyhype@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@hendotcat/11tyhype/-/11tyhype-1.0.1.tgz#3e03137ccd79a3966100a12d01cc073215aa48ea"
+  integrity sha512-7uA/1/2pIBkdfVk/O0uRjZxjLy4wS5+PlEX6u2fcPzTIqdpPaWeaVFg85/nynlZSeC/2DuJgdg2TuOrA2iBmGQ==
   dependencies:
     eazy-logger "3.1.0"
 
-"@hendotcat/11tysass@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@hendotcat/11tysass/-/11tysass-2.0.1.tgz#e1eed7cdb7d414152f2bc775dba1bd814e2aeb0b"
-  integrity sha512-xjVyF8VCiezeJG7TT6Mr0hNmKRmq4z+br0i1PNDnHyPMwKIRSs7GlI4QyaXUsyQQAAJAx5lhkWx6ofPsbjshxg==
+"@hendotcat/11tysass@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@hendotcat/11tysass/-/11tysass-2.0.2.tgz#f94d67a1e8557be16b3241d5c7d1f46729b82bd5"
+  integrity sha512-i4Wcjv1rr6evedd+pOWw0k8I/cjAj3CZsjp7gKIEmdmQorl357b4MWd6Y9YWUz+jHSWn3AsUpd4FPiRfziycdw==
   dependencies:
-    "@hendotcat/11tyhype" "^0.0.4"
+    "@hendotcat/11tyhype" "^1.0.1"
     "@hendotcat/11tyshim" "^0.0.4"
     chokidar "^3.5.1"
     eazy-logger "3.1.0"
