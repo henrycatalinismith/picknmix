@@ -1,5 +1,6 @@
 const { rehypePlugin } = require("@hendotcat/11tyhype")
 const { sassPlugin } = require("@hendotcat/11tysass")
+const { reactPlugin } = require("@hendotcat/11tysnap")
 const markdownIt = require("markdown-it")
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const fs = require("fs-extra")
@@ -77,6 +78,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("videos/*.mp4")
 
   eleventyConfig.addPlugin(syntaxHighlight)
+  eleventyConfig.addPlugin(reactPlugin)
 
   eleventyConfig.addPlugin(sassPlugin, {
     files: [{
