@@ -55,7 +55,7 @@ export default function Mixin(props: any): React.ReactElement {
                 {props.examples.map(example => (
                   <React.Fragment key={example.name}>  
                     <dt>
-                      <a href={`/examples/${example.name}`}>
+                      <a href={`/examples/${example.name.toLowerCase().replace(/ /g, "-")}`}>
                         {example.name}
                       </a>
                     </dt>
@@ -77,7 +77,7 @@ export default function Mixin(props: any): React.ReactElement {
                 {props.dependencies.map(dependency => (
                   <React.Fragment key={dependency.data.name}>  
                     <dt>
-                      <a href={`/mixins/${dependency.data.name}`}>
+                      <a href={`/mixins/${dependency.data.name.toLowerCase().replace(/ /g, "-")}`}>
                         {dependency.data.name}
                       </a>
                     </dt>
@@ -99,7 +99,7 @@ export default function Mixin(props: any): React.ReactElement {
                 {props.dependents.map(dependent => (
                   <React.Fragment key={dependent.data.name}>  
                     <dt>
-                      <a href={`/mixins/${dependent.data.name}`}>
+                      <a href={`/mixins/${dependent.data.name.toLowerCase().replace(/ /g, "-")}`}>
                         {dependent.data.name}
                       </a>
                     </dt>
