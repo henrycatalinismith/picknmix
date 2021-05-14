@@ -1,6 +1,4 @@
 import Prism from "prismjs"
-import PrismComponents from "prismjs/components.json"
-import PrismLoader from "prismjs/components/index.js"
 import React from "react"
 
 export default function Mixin(props: any): React.ReactElement {
@@ -24,7 +22,7 @@ export default function Mixin(props: any): React.ReactElement {
         <article>
           <header>
             <h1>
-              {props.name} mixin lol
+              {props.name} mixin
             </h1>
             <p>
               {props.description}

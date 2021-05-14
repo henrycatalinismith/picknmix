@@ -14,6 +14,10 @@ const sass = require("sass")
 module.exports = function(eleventyConfig) {
   console.log("picknmix")
 
+  eleventyConfig.setFrontMatterParsingOptions({
+    delims: ["/*---", "---*/"],
+  })
+
   eleventyConfig.addCollection(
     "mixins",
     function(collectionApi) {
@@ -67,7 +71,7 @@ module.exports = function(eleventyConfig) {
       const readmeDocument = new JSDOM(readmeHtml)
       const readmeSections = []
       for (const section of readmeDocument.window.document.querySelectorAll("section")) {
-        readmeSections.push(section.outerHTML)
+        readmeSections.push(section.innerHTML)
       }
       return readmeSections
     }
