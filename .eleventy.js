@@ -1,5 +1,6 @@
 const { rehypePlugin } = require("@hendotcat/11tyhype")
 const { sassPlugin } = require("@hendotcat/11tysass")
+const { reactPlugin } = require("@hendotcat/11tysnap")
 const markdownIt = require("markdown-it")
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const fs = require("fs-extra")
@@ -12,6 +13,10 @@ const sass = require("sass")
 
 module.exports = function(eleventyConfig) {
   console.log("picknmix")
+
+  eleventyConfig.setFrontMatterParsingOptions({
+    delims: ["/*---", "---*/"],
+  })
 
   eleventyConfig.addCollection(
     "mixins",
@@ -66,7 +71,7 @@ module.exports = function(eleventyConfig) {
       const readmeDocument = new JSDOM(readmeHtml)
       const readmeSections = []
       for (const section of readmeDocument.window.document.querySelectorAll("section")) {
-        readmeSections.push(section.outerHTML)
+        readmeSections.push(section.innerHTML)
       }
       return readmeSections
     }
@@ -77,6 +82,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("videos/*.mp4")
 
   eleventyConfig.addPlugin(syntaxHighlight)
+  eleventyConfig.addPlugin(reactPlugin, {
+    verbose: true,
+  })
 
   eleventyConfig.addPlugin(sassPlugin, {
     files: [{
