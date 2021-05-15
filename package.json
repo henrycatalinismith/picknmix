@@ -13,7 +13,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
     "@hendotcat/11tyhype": "^1.0.1",
     "@hendotcat/11tysass": "^2.0.2",
-    "@hendotcat/11tysnap": "^0.0.1",
+    "@hendotcat/11tysnap": "^0.0.7",
     "@types/react": "^17.0.5",
     "@types/sass": "^1.16.0",
     "esbuild": "^0.11.20",
@@ -32,10 +32,11 @@
     "mixins/*.scss"
   ],
   "scripts": {
-    "build": "ELEVENTY_EXPERIMENTAL=true eleventy",
-    "start": "ELEVENTY_EXPERIMENTAL=true eleventy --serve"
+    "build": "yarn eleventy",
+    "start": "yarn eleventy --serve"
   },
   "dependencies": {
+    "esbuild-runner": "^1.3.2",
     "prismjs": "^1.23.0"
   }
 }

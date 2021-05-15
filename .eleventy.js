@@ -82,7 +82,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("videos/*.mp4")
 
   eleventyConfig.addPlugin(syntaxHighlight)
-  eleventyConfig.addPlugin(reactPlugin)
+  eleventyConfig.addPlugin(reactPlugin, {
+    verbose: true,
+  })
 
   eleventyConfig.addPlugin(sassPlugin, {
     files: [{
