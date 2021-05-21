@@ -1,32 +1,80 @@
-const { rehypePlugin } = require("@hendotcat/11tyhype")
-const { sassPlugin } = require("@hendotcat/11tysass")
-const { reactPlugin } = require("@hendotcat/11tysnap")
-const markdownIt = require("markdown-it")
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
-const fs = require("fs-extra")
-const yaml = require("js-yaml")
-const _ = require("lodash")
-const { JSDOM } = require("jsdom")
-const rehypeMinifyWhitespace = require("rehype-minify-whitespace")
-const rehypeUrls = require("rehype-urls")
-const sass = require("sass")
+import { rehypePlugin } from "@hendotcat/11tyhype"
+import { sassPlugin } from "@hendotcat/11tysass"
+import { reactPlugin } from "@hendotcat/11tysnap"
+import { EleventyCollection, EleventyLayout } from "@hendotcat/11tytype"
+import markdownIt from "markdown-it"
+import fs from "fs-extra"
+import yaml from "js-yaml"
+import _ from "lodash"
+import { JSDOM } from "jsdom"
+import rehypeMinifyWhitespace from "rehype-minify-whitespace"
+import rehypeUrls from "rehype-urls"
+
+declare global {
+  interface Home {
+    title: string
+    description: string
+    links: {
+      href: string
+      text: string
+    }[]
+  }
+
+  interface Example {
+    name: string
+    description: string
+    html: string
+    scss: string
+  }
+
+  interface Dependency {
+    data: {
+      name: string
+      description: string
+    }
+  }
+
+  interface MixinIndex {
+    title: string
+    description: string
+  }
+
+  interface Mixin {
+    name: string
+    description: string
+    mixin: string
+    dependents: Dependency[]
+    dependencies: Dependency[]
+    examples: Example[]
+    notes: {
+      title: string
+      text: string
+    }[]
+  }
+
+  type ReadmeSection = string
+
+  type Collections = {
+    examples: EleventyCollection<Example>
+    mixins: EleventyCollection<Mixin>
+    readmeSections: string[]
+  }
+
+  type Layout<Template> = EleventyLayout<Template, Collections>
+}
 
 module.exports = function(eleventyConfig) {
   console.log("picknmix")
-
-  eleventyConfig.setFrontMatterParsingOptions({
-    delims: ["/*---", "---*/"],
-  })
 
   eleventyConfig.addCollection(
     "mixins",
     function(collectionApi) {
       return collectionApi
         .getFilteredByGlob("mixins/*.scss")
-        .sort((a, b) =>
-          a.data.name > b.data.name ? 1
+        .sort((a, b) => {
+          return a.data.name > b.data.name ? 1
             : a.data.name < b.data.name ? -1 : 0
-        ).map(f => {
+        }).map(f => {
           f.data.dependencies = (f.data.dependencies || []).map(name => {
             return collectionApi
               .getFilteredByGlob(`mixins/${name}.scss`)[0]
@@ -81,7 +129,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("plots/*.svg")
   eleventyConfig.addPassthroughCopy("videos/*.mp4")
 
-  eleventyConfig.addPlugin(syntaxHighlight)
   eleventyConfig.addPlugin(reactPlugin, {
     verbose: true,
   })
@@ -140,5 +187,14 @@ module.exports = function(eleventyConfig) {
       return notes
     }
   })
+
+  const dir = {
+    includes: "_includes",
+    layouts: "_layouts",
+  }
+
+  return {
+    dir,
+  }
 }
 

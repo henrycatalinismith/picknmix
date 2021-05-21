@@ -1,7 +1,15 @@
 import Prism from "prismjs"
 import React from "react"
 
-export default function Mixin(props: any): React.ReactElement {
+export default function Mixin({
+  name,
+  description,
+  mixin,
+  content,
+  dependencies,
+  dependents,
+  examples,
+}: Layout<Mixin>): React.ReactElement {
   return (
     <html
       lang="en"
@@ -22,10 +30,10 @@ export default function Mixin(props: any): React.ReactElement {
         <article>
           <header>
             <h1>
-              {props.name} mixin
+              {name} mixin
             </h1>
             <p>
-              {props.description}
+              {description}
             </p>
           </header>
 
@@ -33,7 +41,7 @@ export default function Mixin(props: any): React.ReactElement {
             <pre className="language-scss">
               <code dangerouslySetInnerHTML={{
                 __html: Prism.highlight(
-                  props.mixin,
+                  mixin,
                   Prism.languages["css"],
                   "css",
                 )
@@ -43,16 +51,16 @@ export default function Mixin(props: any): React.ReactElement {
 
 
           <section dangerouslySetInnerHTML={{
-            __html: props.content,
+            __html: content,
           }} />
 
-          {props.examples && props.examples.length > 0 && (
+          {examples && examples.length > 0 && (
             <section>
               <h2>
                 Examples
               </h2>
               <dl>
-                {props.examples.map(example => (
+                {examples.map(example => (
                   <React.Fragment key={example.name}>  
                     <dt>
                       <a href={`/examples/${example.name.toLowerCase().replace(/ /g, "-")}`}>
@@ -68,13 +76,13 @@ export default function Mixin(props: any): React.ReactElement {
             </section>
           )}
 
-          {props.dependencies && props.dependencies.length > 0 && (
+          {dependencies && dependencies.length > 0 && (
             <section>
               <h2>
                 Dependencies
               </h2>
               <dl>
-                {props.dependencies.map(dependency => (
+                {dependencies.map(dependency => (
                   <React.Fragment key={dependency.data.name}>  
                     <dt>
                       <a href={`/mixins/${dependency.data.name.toLowerCase().replace(/ /g, "-")}`}>
@@ -90,13 +98,13 @@ export default function Mixin(props: any): React.ReactElement {
             </section>
           )}
 
-          {props.dependents && props.dependents.length > 0 && (
+          {dependents && dependents.length > 0 && (
             <section>
               <h2>
                 Dependents
               </h2>
               <dl>
-                {props.dependents.map(dependent => (
+                {dependents.map(dependent => (
                   <React.Fragment key={dependent.data.name}>  
                     <dt>
                       <a href={`/mixins/${dependent.data.name.toLowerCase().replace(/ /g, "-")}`}>
@@ -111,7 +119,6 @@ export default function Mixin(props: any): React.ReactElement {
               </dl>
             </section>
           )}
-
 
         </article>
 

@@ -1,7 +1,7 @@
 import Prism from "prismjs"
 import React from "react"
 
-export default function ExamplePage(props: any): React.ReactElement {
+export default function ExamplePage({ example }: Layout<{ example: Example }>): React.ReactElement {
   return (
     <html lang="en" dir="ltr">
       <head>
@@ -12,7 +12,7 @@ export default function ExamplePage(props: any): React.ReactElement {
         />
         <link
           rel="canonical"
-          href={`https://hen.cat/picknmix/${props.name}`}
+          href={`https://hen.cat/picknmix/${example.name}`}
         />
         <link
           rel="stylesheet"
@@ -24,15 +24,15 @@ export default function ExamplePage(props: any): React.ReactElement {
         <article>
           <header>
             <h1>
-              {props.example.name}
+              {example.name}
             </h1>
             <p>
-              {props.example.description}
+              {example.description}
             </p>
           </header>
 
           <section>
-            <iframe src={`/examples/${props.example.name.toLowerCase().replace(/ /g, "-")}/iframe.html`} />
+            <iframe src={`/examples/${example.name.toLowerCase().replace(/ /g, "-")}/iframe.html`} />
           </section>
 
           <section>
@@ -40,7 +40,7 @@ export default function ExamplePage(props: any): React.ReactElement {
             <pre className="language-scss">
               <code dangerouslySetInnerHTML={{
                 __html: Prism.highlight(
-                  props.example.scss,
+                  example.scss,
                   Prism.languages["css"],
                   "css",
                 )
@@ -53,7 +53,7 @@ export default function ExamplePage(props: any): React.ReactElement {
             <pre className="language-scss">
               <code dangerouslySetInnerHTML={{
                 __html: Prism.highlight(
-                  props.example.html,
+                  example.html,
                   Prism.languages["html"],
                   "html",
                 )

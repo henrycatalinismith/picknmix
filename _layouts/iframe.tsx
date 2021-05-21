@@ -1,7 +1,7 @@
 import React from "react"
 import { renderSync } from "sass"
 
-export default function ExampleIframe(props: any): React.ReactElement {
+export default function ExampleIframe({ example }: Layout<{ example: Example }>): React.ReactElement {
   return (
     <html lang="en" dir="ltr">
       <head>
@@ -24,14 +24,14 @@ export default function ExampleIframe(props: any): React.ReactElement {
               main {
                 height: 100%;
               }
-              ${props.example.scss}
+              ${example.scss}
             `
           }).css.toString()
         }} />
       </head>
       <body>
         <main dangerouslySetInnerHTML={{
-          __html: props.example.html,
+          __html: example.html,
         }} />
       </body>
     </html>

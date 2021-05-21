@@ -1,14 +1,11 @@
-/*---
-title: picknmix
-description: Some Sass mixins
-links:
-  - text: Browse
-    href: /mixins
----*/
-
 import React from "react"
 
-export default function Index(props: any): React.ReactElement {
+export default function Index({
+  title,
+  description,
+  links,
+  collections,
+}: Layout<Home>): React.ReactElement {
   return (
     <html
       lang="en"
@@ -23,14 +20,14 @@ export default function Index(props: any): React.ReactElement {
           rel="stylesheet"
           href="style.scss"
         />
-        <title>{props.title}</title>
+        <title>{title}</title>
       </head>
       <body>
         <main>
         
           <header className="hero">
             <h1>
-              <span>{props.title}</span>
+              <span>{title}</span>
               <svg
                 aria-labelledby="svg-title"
                 preserveAspectRatio="xMidyMid meet"
@@ -59,11 +56,11 @@ export default function Index(props: any): React.ReactElement {
               </svg>
             </h1>
             <p>
-              {props.description}
+              {description}
             </p>
             <nav>
               <ol>
-                {props.links.map(link => (
+                {links.map(link => (
                   <li key={link.href}>
                     <a href={link.href}>
                       {link.text}
@@ -74,7 +71,7 @@ export default function Index(props: any): React.ReactElement {
             </nav>
           </header>
 
-          {props.collections.readmeSections.map(section => (
+          {collections.readmeSections.map(section => (
             <section dangerouslySetInnerHTML={{ __html: section }} />
           ))}
 
