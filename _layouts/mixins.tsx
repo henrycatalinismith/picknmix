@@ -1,5 +1,8 @@
+import {
+  Anchor,
+  DescriptionList,
+} from "@hendotcat/elements"
 import React from "react"
-import DefinitionList from "../_includes/definition-list"
 
 export default function MixinIndex({
   title,
@@ -42,13 +45,12 @@ export default function MixinIndex({
 
         {collections.mixins && collections.mixins.length > 0 && (
           <section>
-            <DefinitionList
-              items={collections.mixins.map(mixin => ({
-                termHref: `/mixins/${mixin.data.name}`,
-                termText: mixin.data.name,
-                detailsText: mixin.data.description
-              }))}
-            />
+            <DescriptionList items={collections.mixins.map(mixin => [
+              <Anchor href={`/mixins/${mixin.data.name}`}>
+                {mixin.data.name}
+              </Anchor>,
+              <>{mixin.data.description}</>,
+            ])} />
           </section>
         )}
 

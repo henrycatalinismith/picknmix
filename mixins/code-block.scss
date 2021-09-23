@@ -11,8 +11,8 @@ dependencies:
 @mixin code-block {
   pre {
     background: var(--bg1);
-    border-top: 0.1rem solid var(--pink);
-    border-bottom: 0.1rem solid var(--pink);
+    border-top: 0.1rem solid var(--fg);
+    border-bottom: 0.1rem solid var(--fg);
     display: flex;
     justify-content: center;
     margin: 0;

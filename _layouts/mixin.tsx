@@ -1,11 +1,12 @@
 import Prism from "prismjs"
+import markdownIt from "markdown-it"
 import React from "react"
 
 export default function Mixin({
   name,
   description,
   mixin,
-  content,
+  notes,
   dependencies,
   dependents,
   examples,
@@ -41,18 +42,19 @@ export default function Mixin({
             <pre className="language-scss">
               <code dangerouslySetInnerHTML={{
                 __html: Prism.highlight(
-                  mixin,
+                  mixin.trim(),
                   Prism.languages["css"],
                   "css",
                 )
-              }} />
-            </pre>
+              }} /></pre>
           </section>
 
-
-          <section dangerouslySetInnerHTML={{
-            __html: content,
-          }} />
+          {notes && notes.length > 0 && notes.map(note => (
+            <section dangerouslySetInnerHTML={{ __html: [
+              `<h2>${note.title}</h2>`,
+              markdownIt({ html: true }).render(note.text),
+            ].join("") }} />
+          ))}
 
           {examples && examples.length > 0 && (
             <section>
@@ -61,7 +63,7 @@ export default function Mixin({
               </h2>
               <dl>
                 {examples.map(example => (
-                  <React.Fragment key={example.name}>  
+                  <React.Fragment key={example.name}>
                     <dt>
                       <a href={`/examples/${example.name.toLowerCase().replace(/ /g, "-")}`}>
                         {example.name}
@@ -83,7 +85,7 @@ export default function Mixin({
               </h2>
               <dl>
                 {dependencies.map(dependency => (
-                  <React.Fragment key={dependency.data.name}>  
+                  <React.Fragment key={dependency.data.name}>
                     <dt>
                       <a href={`/mixins/${dependency.data.name.toLowerCase().replace(/ /g, "-")}`}>
                         {dependency.data.name}
@@ -105,7 +107,7 @@ export default function Mixin({
               </h2>
               <dl>
                 {dependents.map(dependent => (
-                  <React.Fragment key={dependent.data.name}>  
+                  <React.Fragment key={dependent.data.name}>
                     <dt>
                       <a href={`/mixins/${dependent.data.name.toLowerCase().replace(/ /g, "-")}`}>
                         {dependent.data.name}

@@ -37,5 +37,8 @@
   "scripts": {
     "build": "yarn ts-node ./node_modules/.bin/eleventy --config=eleventy.ts",
     "start": "yarn ts-node ./node_modules/.bin/eleventy --config=eleventy.ts --serve"
+  },
+  "dependencies": {
+    "@hendotcat/elements": "^0.0.4"
   }
 }

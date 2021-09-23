@@ -178,11 +178,12 @@ module.exports = function(eleventyConfig) {
         return ""
       }
 
-      const notes = "<section>" + (data.notes || []).map(note => {
-        return markdownIt({
-          html: true,
-        }).render(`## ${note.title}\n${note.text}`)
-      }).join("</section><section>") + "</section>"
+      const notes = (data.notes || []).map(note => {
+        return {
+          title: note.title,
+          text: markdownIt({ html: true }).render(note.text),
+        }
+      })
 
       return notes
     }
