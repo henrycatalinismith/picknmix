@@ -16,9 +16,6 @@
   <a href="https://hen.cat/picknmix">
     <strong><code>[homepage]</code></strong>
   </a>
-  <a href="https://hen.cat/picknmix/mixins">
-    <strong><code>[browse]</code></strong>
-  </a>
 </p>
 
 <section>

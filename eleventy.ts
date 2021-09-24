@@ -34,11 +34,6 @@ declare global {
     }
   }
 
-  interface MixinIndex {
-    title: string
-    description: string
-  }
-
   interface Mixin {
     name: string
     description: string
