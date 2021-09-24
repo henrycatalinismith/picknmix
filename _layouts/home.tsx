@@ -1,3 +1,7 @@
+import {
+  Anchor,
+  DescriptionList,
+} from "@hendotcat/elements"
 import React from "react"
 
 export default function Index({
@@ -24,7 +28,7 @@ export default function Index({
       </head>
       <body>
         <main>
-        
+
           <header className="hero">
             <h1>
               <span>{title}</span>
@@ -58,20 +62,27 @@ export default function Index({
             <p>
               {description}
             </p>
-            <nav>
-              <ol>
-                {links.map(link => (
-                  <li key={link.href}>
-                    <a href={link.href}>
-                      {link.text}
-                    </a>
-                  </li>
-                ))}
-              </ol>
-            </nav>
           </header>
 
-          {collections.readmeSections.map(section => (
+          {collections.readmeSections.slice(0, -1).map(section => (
+            <section dangerouslySetInnerHTML={{ __html: section }} />
+          ))}
+
+          {collections.mixins && collections.mixins.length > 0 && (
+            <section>
+              <h2>
+                Mixins
+              </h2>
+              <DescriptionList items={collections.mixins.map(mixin => [
+                <Anchor href={`/mixins/${mixin.data.name}`}>
+                  {mixin.data.name}
+                </Anchor>,
+                <>{mixin.data.description}</>,
+              ])} />
+            </section>
+          )}
+
+          {collections.readmeSections.slice(-1).map(section => (
             <section dangerouslySetInnerHTML={{ __html: section }} />
           ))}
 
@@ -84,4 +95,4 @@ export default function Index({
     </html>
   )
 }
-  
+
