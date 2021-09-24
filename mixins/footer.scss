@@ -19,6 +19,29 @@ dependencies:
     margin-bottom: var(--margin);
     min-height: var(--column);
     width: var(--column);
+
+    [itemprop="creator"] {
+      font-family: Futura, var(--sans);
+      margin: 0 0 0.2rem 0;
+      text-align: right;
+    }
+
+    [itemprop="creator"] a {
+      color: black;
+      font-size: var(--f12);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    [itemprop="creator"] a:hover {
+      text-decoration-line: underline;
+      text-decoration-color: var(--blue);
+    }
+
+    [itemprop="creator"] a:focus {
+      color: var(--bg0);
+    }
+
   }
 }
 
