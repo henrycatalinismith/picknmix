@@ -26,7 +26,7 @@
     use some of it if you like, but it's not a Serious Project intended for
     general purpose use. So don't run this command.
   </p>
-  <pre><code>yarn add @hendotcat/picknmix</code></pre>
+  <pre><code>yarn add @henrycatalinismith/picknmix</code></pre>
   <p>
     A lot of the mixins here are part of a little classless CSS theme I've
     cobbled together. I wanted to be able to throw together quick mini websites

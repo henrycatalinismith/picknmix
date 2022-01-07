@@ -1,7 +1,7 @@
 import {
   Anchor,
   DescriptionList,
-} from "@hendotcat/elements"
+} from "@henrycatalinismith/elements"
 import React from "react"
 
 export default function Index({

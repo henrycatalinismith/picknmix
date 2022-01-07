@@ -1,20 +1,20 @@
 {
-  "name": "@hendotcat/picknmix",
+  "name": "@henrycatalinismith/picknmix",
   "description": "Some Sass mixins",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "license": "CC0-1.0",
   "author": {
     "name": "Henry Catalini Smith",
-    "email": "smith@hen.cat",
+    "email": "henry@catalinismith.com",
     "url": "https://hen.cat/"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
-    "@hendotcat/11tyhype": "^1.0.1",
-    "@hendotcat/11tysass": "^3.0.1",
-    "@hendotcat/11tysnap": "^0.0.7",
-    "@hendotcat/11tytype": "^0.0.5",
-    "@hendotcat/elements": "^0.0.4",
+    "@henrycatalinismith/11tyhype": "^1.0.1",
+    "@henrycatalinismith/11tysass": "^3.0.1",
+    "@henrycatalinismith/11tysnap": "^0.0.7",
+    "@henrycatalinismith/11tytype": "^0.0.5",
+    "@henrycatalinismith/elements": "^0.0.4",
     "@types/node": "^15.3.1",
     "@types/react": "^17.0.5",
     "@types/sass": "^1.16.0",
