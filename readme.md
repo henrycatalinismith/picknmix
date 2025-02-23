@@ -1,22 +1,6 @@
-<p align="center">
-  <img
-    alt="picknmix"
-    src="https://hen.cat/picknmix/picknmix.svg"
-    height="64"
-  />
-</p>
+# picknmix
 
-<p align="center">
-  <strong>
-    Some Sass mixins
-  </strong>
-</p>
-
-<p align="center">
-  <a href="https://hen.cat/picknmix">
-    <strong><code>[homepage]</code></strong>
-  </a>
-</p>
+Some Sass mixins
 
 <section>
   <h2>Literally just some mixins</h2>
@@ -46,16 +30,9 @@
 <section>
   <h2>License</h2>
   <p>
-    <a href="http://creativecommons.org/publicdomain/zero/1.0/">
-      <img
-        alt="License: CC0-1.0"
-        src="https://licensebuttons.net/p/zero/1.0/88x31.png"
-      />
+    <a href="https://codeberg.org/henrycatalinismith/picknmix/src/branch/main/license">
+      AGPL-3.0
     </a>
-  </p>
-  <p>
-    If you find something here that you wanna copypaste into your own stuff
-    then hell yeah, go for it! This is public domain code so go for your life!
   </p>
 </section>
 
